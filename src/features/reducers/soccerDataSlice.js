@@ -21,11 +21,12 @@ const soccerDataSlice = createSlice({
     })
     .addCase(fetchSoccerData.failed, (state, action) => {
       state.status = 'failed';
+      // set soccerData to a falsy value
       state.soccerData = '';
     })
   }
 });
 
-export default soccerDataSlice.reducer
+export default soccerDataSlice.reducer;
 
 
