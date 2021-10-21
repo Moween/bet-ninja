@@ -17,8 +17,12 @@ const Header = () => {
               variant="h4" component="h1" 
             >
               Bet
-              <Typography variant="h4" component="span" color="secondary">
-              Ninja
+              <Typography 
+                variant="h4" 
+                component="span" 
+                sx={{ color: '#e70008'}}
+              >
+                Ninja
               </Typography>
             </Typography>
           </div>
