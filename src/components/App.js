@@ -12,7 +12,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <Header />
       <Switch>
-        <Route path='/history' component={History} />
+        <Route path='/pages/history' component={History} />
         <Route path='/' component={Home} />
       </Switch>
     </ThemeProvider>
