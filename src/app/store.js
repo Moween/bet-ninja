@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import soccerDataSlice from '../features/reducers/soccerDataSlice';
+import soccerDataSlice from '../reducers/soccerDataSlice';
 
 export const store = configureStore({
   reducer: {

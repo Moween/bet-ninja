@@ -1,4 +1,5 @@
-import { createTheme, makeStyles } from '@material-ui/core/styles';
+import { createTheme } from '@material-ui/core';
+import { makeStyles } from '@material-ui/styles'
 
 export const theme = createTheme({
   breakpoints: { // Media Query Breakpoint
