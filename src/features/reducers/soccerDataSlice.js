@@ -19,7 +19,7 @@ const soccerDataSlice = createSlice({
       // Adds any fetched data to the array
       state.soccerData = state.soccerData.concat(action.payload);
     })
-    .addCase(fetchSoccerData.failed, (state, action) => {
+    .addCase(fetchSoccerData.rejected, (state) => {
       state.status = 'failed';
       // set soccerData to a falsy value
       state.soccerData = '';
