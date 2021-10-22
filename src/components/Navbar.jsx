@@ -20,8 +20,8 @@ const navLinks = [
 
 const Navbar = () => {
   return ( 
-    <nav>
-      <ul>
+    <nav className="nav">
+      <ul className="nav_list">
         {navLinks.map((navLink) => (
           <Link to={navLink.path}>{navLink.name}</Link>
         ))}
