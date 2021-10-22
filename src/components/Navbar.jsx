@@ -10,10 +10,10 @@ const navLinks = [
     name: 'History',
     path: '/history',
   },{
-    name: 'Sign up',
+    name: 'Promo',
     path: '/',
   },{
-    name: 'Login',
+    name: 'FAQ',
     path: '/',
   },
 ];
