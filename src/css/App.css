@@ -47,4 +47,45 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
+body {
+  color: grey;
+}
+
+.header {
+  width: 100%;
+  background-color: black;
+}
+
+.header__div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header .nav {
+  width: 40%;
+  margin-left: auto;
+}
+
+.header .nav_list {
+  width: 100%;
+}
+
+.header .nav_list a {
+  color: white;
+  text-decoration: none;
+  width: 15%;
+  padding: 0.5rem;
+}
 /*# sourceMappingURL=App.css.map */

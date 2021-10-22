@@ -1,0 +1,24 @@
+body {
+  color: $primaryColor;
+}
+
+.header {
+  width: 100%;
+  background-color: $black;
+  &__div {
+    @include flexItems(row, space-between, center);
+  }
+  .nav {
+    width: 40%;
+    margin-left: auto;
+    &_list {
+      width: 100%;
+      a {
+        color: white;
+        text-decoration: none;
+        width: 15%;
+        padding: 0.5rem;
+      }
+    }
+  }
+}
