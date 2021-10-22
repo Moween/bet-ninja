@@ -3,15 +3,16 @@ import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import SportsSoccerIcon from '@material-ui/icons/SportsSoccer';
 import { useStyles } from '../utils/muiStyles';
+import SearchBar from './SearchBar';
 import Navbar from './Navbar';
 
 const Header = () => {
   const { brandLogo, logoContainer, soccerIcon } = useStyles();
   return (
     <header className="header">
-      <Container maxWidth="lg">
+      <Container maxWidth="xl">
         <div className="header__div">
-          <div  className={logoContainer}>
+          <div className={logoContainer}>
             <SportsSoccerIcon className={soccerIcon} />
             <Typography 
               className={brandLogo} 
@@ -28,6 +29,7 @@ const Header = () => {
             </Typography>
           </div>
           <Navbar />
+          <SearchBar />
         </div>
       </Container>
     </header>
