@@ -49,12 +49,15 @@ table {
 }
 
 body {
-  color: grey;
+  color: silver;
 }
 
 .header {
   width: 100%;
   background-color: black;
+  position: fixed;
+  top: 0;
+  z-index: 1201;
 }
 
 .header__div {
@@ -74,8 +77,7 @@ body {
 }
 
 .header .nav {
-  width: 40%;
-  margin-left: auto;
+  width: 30%;
 }
 
 .header .nav_list {
@@ -83,9 +85,90 @@ body {
 }
 
 .header .nav_list a {
-  color: white;
+  color: silver;
   text-decoration: none;
   width: 15%;
   padding: 0.5rem;
+}
+
+.searchBox {
+  margin-left: auto;
+  background: #15334e 28%;
+  height: 30px;
+  border-radius: 30px;
+}
+
+.searchBox:hover .searchInput {
+  width: 200px;
+  padding: 0 6px;
+}
+
+.searchBox .searchButton {
+  color: white;
+  float: right;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #15334e 28%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.searchBox .searchInput {
+  border: none;
+  background: none;
+  outline: none;
+  float: left;
+  color: silver;
+  font-size: 1rem;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  line-height: 30px;
+  width: 0px;
+}
+
+main {
+  padding: 90px;
+  margin-left: 6.875rem;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 80%;
+}
+
+table td, table th {
+  text-align: center;
+  padding: 0.31rem;
+}
+
+table tr:nth-child(even) {
+  background-color: #dddddd;
+  color: black;
+}
+
+table .time {
+  padding: auto 0;
+}
+
+table .team {
+  text-align: right;
+}
+
+@media screen and (max-width: 620px) {
+  .searchBox:hover > .searchInput {
+    width: 150px;
+    padding: 0 6px;
+  }
 }
 /*# sourceMappingURL=App.css.map */

@@ -5,20 +5,91 @@ body {
 .header {
   width: 100%;
   background-color: $black;
+  position: fixed;
+  top: 0;
+  z-index: 1201;
   &__div {
     @include flexItems(row, space-between, center);
   }
   .nav {
-    width: 40%;
-    margin-left: auto;
+    width: 30%;
+    // margin-left: auto;
     &_list {
       width: 100%;
       a {
-        color: white;
+        color: $primaryColor;
         text-decoration: none;
         width: 15%;
         padding: 0.5rem;
       }
     }
   }
+}
+
+.searchBox {
+  margin-left: auto;
+  background: rgba(21, 51, 78, 1) 28%;
+  height: 30px;
+  border-radius: 30px;
+  &:hover { 
+    .searchInput {
+      width: 200px;
+      padding: 0 6px;
+    }
+  }
+  .searchButton {
+    color: white;
+    float: right;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: rgba(21, 51, 78, 1) 28%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+  }  
+  .searchInput {
+    border:none;
+    background: none;
+    outline:none;
+    float:left;
+    color: $primaryColor;
+    font-size: 1rem;
+    transition: 0.4s;
+    line-height: 30px;
+    width: 0px; 
+  }
+}
+
+main {
+  padding: 90px;
+  margin-left: 6.875rem;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 80%;
+  td, th {
+    text-align: center;
+    padding: 0.31rem;
+  }
+  tr:nth-child(even) {
+    background-color: #dddddd;
+    color: black;
+  }
+  .time {
+    padding: auto 0;
+  }
+  .team {
+    text-align: right;
+  }
+}
+
+@media screen and (max-width: 620px) {
+.searchBox:hover > .searchInput {
+  width: 150px;
+  padding: 0 6px;
+}
 }
