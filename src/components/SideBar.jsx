@@ -9,7 +9,7 @@ import ListItemText from "@material-ui/core/ListItemText";
 import Typography from "@material-ui/core/Typography";
 
 const SideBar = () => {
-  const drawerWidth = 200;
+  const drawerWidth = '20%';
   return (
     <Drawer
       variant="permanent"
