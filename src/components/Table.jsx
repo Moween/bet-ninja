@@ -1,19 +1,17 @@
 import React from "react";
 import { useSelector } from 'react-redux';
 import TableData from "./TableData";
-import { useStyles } from "../utils/muiStyles";
 
 const Table = () => {
   const soccerData = useSelector(state => state.soccerData.soccerData);
-  const { table } = useStyles();
   return (
-    <table className={table}>
+    <table>
       <thead>
         <tr>
           <th>League</th>
-          <th>HomeTeam</th>
+          <th>Home Team</th>
           <th></th>
-          <th>AwayTeam</th>
+          <th>Away Team</th>
           <th>OverUnderOdd</th>
           <th>Tip</th>
           <th>Score</th>
