@@ -6,10 +6,9 @@ import Divider from "@material-ui/core/Divider";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
-import Typography from "@material-ui/core/Typography";
 
 const SideBar = () => {
-  const drawerWidth = '20%';
+  const drawerWidth = '18%';
   return (
     <Drawer
       variant="permanent"
@@ -27,11 +26,8 @@ const SideBar = () => {
     >
       <Toolbar />
       <Box sx={{ overflow: "hidden" }}>
-        <Typography sx={{ margin: "1rem 1rem 0", fontWeight: "bold" }}>
-          Top Leagues
-        </Typography>
         <List>
-          {["Lorem", "Ipsum", "Blah"].map((text, index) => (
+          {["HighLight", "Live", "Promo"].map((text, index) => (
             <ListItem
               button
               key={text}
@@ -41,10 +37,7 @@ const SideBar = () => {
             </ListItem>
           ))}
         </List>
-        <Divider />
-        <Typography sx={{ marginLeft: "1rem", fontWeight: "bold" }}>
-          News
-        </Typography>
+        <Divider />        
         <List>
           {["Soccer", "Winners", "Spam"].map((text, index) => (
             <ListItem
