@@ -1,45 +1,44 @@
-import React from 'react';
-import Box from '@material-ui/core/Box';
-import { getTime } from '../utils';
-import { useStyles } from '../utils/muiStyles';
+import React from "react";
+import Box from "@material-ui/core/Box";
+import { getTime } from "../utils";
 
-const TableData = ({ match }) => {
-  const {
-    date,
-    league,
-    homeTeam,
-    awayTeam,
-    overUnderOdd,
-    tip,
-    score
-  } = match;
-  const { team, time } = useStyles();
+const TableData = ({ game }) => {
+  const { date, league, homeTeam, awayTeam, overUnderOdd, tip, score } = game;
   return (
     <tr>
-      <td>{league}</td>
-      <td>
-        <span className={team}>{homeTeam}</span>
-      </td>
-      <td>
-        <Box sx={{
-          display:'inline-block',
-          width: 50,
-          height: 20,
-          bgcolor: '#42b72a',
-          marginTop: 5,
+      <td className="time">
+        <Box
+          sx={{
+            width: 'auto',
+            height: 'auto',
+            bgcolor: "#e70008",
+            borderRadius: '0.125rem',
+            marginTop: 'auto',
+            color: '#ccc',
+            padding: '0.31rem'
           }}
         >
-          <span className={time}>{getTime(date)}</span>
+          {getTime(date)}
         </Box>
       </td>
       <td>
-        <span className={team}>{awayTeam}</span>
+        <div className="team">{homeTeam}</div>
+        <div className="team">{awayTeam}</div>
       </td>
-      <td>{overUnderOdd}</td>
-      <td>{tip}</td>
-      <td>{score}</td>
+      <td>
+        <span>{league}</span>
+      </td>
+      <td>
+        <span>{overUnderOdd}</span>
+      </td>
+      <td>
+        <span>{tip}</span>
+      </td>
+      <td>
+        <span>{score}</span>
+      </td>
     </tr>
   );
-}
- 
+};
+
 export default TableData;
