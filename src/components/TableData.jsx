@@ -1,6 +1,6 @@
-import React from "react";
-import Box from "@material-ui/core/Box";
-import { getTime } from "../utils";
+import React from 'react';
+import Box from '@material-ui/core/Box';
+import { getTime } from '../utils';
 
 const TableData = ({ game }) => {
   const { date, league, homeTeam, awayTeam, overUnderOdd, tip, score } = game;
@@ -11,7 +11,7 @@ const TableData = ({ game }) => {
           sx={{
             width: 'auto',
             height: 'auto',
-            bgcolor: "#e70008",
+            bgcolor: '#e70008',
             borderRadius: '0.125rem',
             marginTop: 'auto',
             color: '#ccc',
