@@ -22,7 +22,7 @@ export const theme = createTheme({
 export const useStyles = makeStyles((theme) => ({
   // Header Styles
   brandLogo: {
-    color: 'white',
+    color: '#ccc',
     padding: 10,
     paddingLeft: 0
   },
@@ -33,6 +33,8 @@ export const useStyles = makeStyles((theme) => ({
   soccerIcon: {
     color: 'white'
   },
+  // TableData Styles
+
 }));
 
 
