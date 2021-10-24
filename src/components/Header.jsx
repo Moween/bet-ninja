@@ -10,7 +10,7 @@ const Header = () => {
   const { brandLogo, logoContainer, soccerIcon } = useStyles();
   return (
     <header className="header">
-      <Container maxWidth="xl">
+      <Container maxWidth="false">
         <div className="header__div">
           <div className={logoContainer}>
             <SportsSoccerIcon className={soccerIcon} />
