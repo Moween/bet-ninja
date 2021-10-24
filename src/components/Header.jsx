@@ -16,11 +16,11 @@ const Header = () => {
             <SportsSoccerIcon className={soccerIcon} />
             <Typography 
               className={brandLogo} 
-              variant="h4" component="h1" 
+              variant="h3" component="h1" 
             >
               Bet
               <Typography 
-                variant="h4" 
+                variant="h3" 
                 component="span" 
                 sx={{ color: '#e70008'}}
               >
