@@ -32,7 +32,7 @@ const SideBar = () => {
               <ListItem
                 button
                 key={text}
-                sx={{ paddingTop: 0, marginLeft: "1.05rem" }}
+                sx={{ paddingLeft: '0.5rem', marginLeft: "1.05rem" }}
               >
                 <ListItemText primary={text} />
               </ListItem>
@@ -44,7 +44,7 @@ const SideBar = () => {
               <ListItem
                 button
                 key={text}
-                sx={{ paddingTop: 0, marginLeft: "1.05rem" }}
+                sx={{ paddingLeft: '0.5rem', marginLeft: "1.05rem" }}
               >
                 <ListItemText primary={text} />
               </ListItem>
