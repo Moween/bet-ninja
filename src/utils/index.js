@@ -1,10 +1,9 @@
-import parseISO from 'date-fns/parseISO';
+import parseJSON from 'date-fns/parseJSON';
 
 export const getTime = (date) => {
-  let currentTime = parseISO(date);
-  return new Date(currentTime)
+  let currentTime = parseJSON(date);
+  return currentTime
     .toLocaleTimeString()
-    .toString()
     .slice(0, 5);
 };
 
