@@ -6,7 +6,7 @@ import DatePicker from './DatePicker';
 
 const Today = () => {
   return ( 
-    <Box sx={{ overflowX: 'auto'}}>
+    <Box sx={{ overflowX: 'auto'}} id="today">
       <DatePicker />
       <Table />
     </Box>
