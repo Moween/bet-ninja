@@ -12,15 +12,19 @@ body {
     @include flexItems(row, space-between, center);
   }
   .nav {
-    width: 30%;
-    // margin-left: auto;
+    width: auto;
+    margin-left: 2rem;
     &_list {
       width: 100%;
       a {
         color: $primaryColor;
         text-decoration: none;
         width: 15%;
+        font-family: 1.5rem;
         padding: 0.5rem;
+        &:hover {
+          color: rgba(21, 51, 78, 1);
+        }
       }
     }
   }
@@ -31,7 +35,7 @@ body {
   background: rgba(21, 51, 78, 1) 28%;
   height: 30px;
   border-radius: 30px;
-  &:hover { 
+  &:hover {
     .searchInput {
       width: 200px;
       padding: 0 6px;
@@ -44,52 +48,88 @@ body {
     height: 30px;
     border-radius: 50%;
     background: rgba(21, 51, 78, 1) 28%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flexItems(row, center, center);
     transition: 0.4s;
-  }  
+  }
   .searchInput {
-    border:none;
+    border: none;
     background: none;
-    outline:none;
-    float:left;
+    outline: none;
+    float: left;
     color: $primaryColor;
     font-size: 1rem;
     transition: 0.4s;
     line-height: 30px;
-    width: 0px; 
+    width: 0px;
   }
 }
 
+aside {
+  margin-top: 6.25rem;
+  width: 20%;
+}
+
 main {
-  padding: 90px;
-  margin-left: 6.875rem;
+  width: 70%;
+  padding: 6.25rem 2rem;
+}
+
+#tomorrow {
+  margin-top: 100px;
 }
 
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
-  width: 80%;
-  td, th {
-    text-align: center;
-    padding: 0.31rem;
+  width: 70%;
+  font-size: 0.75rem;
+  table-layout: auto;
+  thead {
+    font-weight: bold;
+    box-shadow: 3px 3px 2px 1px rgba(0, 0, 0, 0.2);
+    th {
+      padding: 1rem;
+      color: whitesmoke;
+      &:nth-of-type(2) {
+        text-align: left;
+      }
+    }
   }
-  tr:nth-child(even) {
-    background-color: #dddddd;
-    color: black;
-  }
-  .time {
-    padding: auto 0;
+  tbody {
+    td {
+      box-shadow: 3px 3px 2px 1px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      padding: 0.5rem;
+      span {
+        display: inline-block;
+        margin: auto;
+      }
+    }
+    .time {
+      position: relative;
+      width: 10%;
+      div {
+        font-size: 0.625rem;
+        font-weight: bold;
+        display: block;
+        position: absolute;
+        top: 30%;
+        right: 0;
+      }
+    }
   }
   .team {
-    text-align: right;
+    text-align: left;
+    padding-left: 0.5rem;
+    &:first-of-type {
+      margin-bottom: 0.425rem;
+    }
   }
 }
 
 @media screen and (max-width: 620px) {
-.searchBox:hover > .searchInput {
-  width: 150px;
-  padding: 0 6px;
-}
+  .searchBox:hover > .searchInput {
+    width: 150px;
+    padding: 0 6px;
+  }
 }

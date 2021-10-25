@@ -77,7 +77,8 @@ body {
 }
 
 .header .nav {
-  width: 30%;
+  width: auto;
+  margin-left: 2rem;
 }
 
 .header .nav_list {
@@ -88,7 +89,12 @@ body {
   color: silver;
   text-decoration: none;
   width: 15%;
+  font-family: 1.5rem;
   padding: 0.5rem;
+}
+
+.header .nav_list a:hover {
+  color: #15334e;
 }
 
 .searchBox {
@@ -113,6 +119,10 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -136,33 +146,76 @@ body {
   width: 0px;
 }
 
+aside {
+  margin-top: 6.25rem;
+  width: 20%;
+}
+
 main {
-  padding: 90px;
-  margin-left: 6.875rem;
+  width: 70%;
+  padding: 6.25rem 2rem;
+}
+
+#tomorrow {
+  margin-top: 100px;
 }
 
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
-  width: 80%;
+  width: 70%;
+  font-size: 0.75rem;
+  table-layout: auto;
 }
 
-table td, table th {
+table thead {
+  font-weight: bold;
+  -webkit-box-shadow: 3px 3px 2px 1px rgba(0, 0, 0, 0.2);
+          box-shadow: 3px 3px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+table thead th {
+  padding: 1rem;
+  color: whitesmoke;
+}
+
+table thead th:nth-of-type(2) {
+  text-align: left;
+}
+
+table tbody td {
+  -webkit-box-shadow: 3px 3px 2px 1px rgba(0, 0, 0, 0.2);
+          box-shadow: 3px 3px 2px 1px rgba(0, 0, 0, 0.2);
   text-align: center;
-  padding: 0.31rem;
+  padding: 0.5rem;
 }
 
-table tr:nth-child(even) {
-  background-color: #dddddd;
-  color: black;
+table tbody td span {
+  display: inline-block;
+  margin: auto;
 }
 
-table .time {
-  padding: auto 0;
+table tbody .time {
+  position: relative;
+  width: 10%;
+}
+
+table tbody .time div {
+  font-size: 0.625rem;
+  font-weight: bold;
+  display: block;
+  position: absolute;
+  top: 30%;
+  right: 0;
 }
 
 table .team {
-  text-align: right;
+  text-align: left;
+  padding-left: 0.5rem;
+}
+
+table .team:first-of-type {
+  margin-bottom: 0.425rem;
 }
 
 @media screen and (max-width: 620px) {
