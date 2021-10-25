@@ -2,14 +2,17 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Container from '@material-ui/core/Container';
 import { ToastContainer } from 'react-toastify'; // To display network errors
-import fetchSoccerData from '../features/actions/soccerData';
+import fetchSoccerData from '../actions/soccerData';
 import { useStyles } from '../utils/muiStyles';
-import Table from '../components/Table';
+import Today from '../components/Today';
+import Yesterday from '../components/Yesterday';
+import Tomorrow from '../components/Tomorrow';
+import Tabs from '../components/Tabs';
+import { Route } from 'react-router-dom';
 
 const Home = () => {
   const { container } = useStyles();
   const dispatch = useDispatch();
-  const soccerData = useSelector(state => state.soccerData.soccerData);
   const soccerDataStatus  = useSelector(state => state.soccerData.status);
 
   useEffect(() => {
@@ -24,7 +27,9 @@ const Home = () => {
     }else if(soccerDataStatus === 'succeeded') {
       return (
         <div>
-          {/* <Table soccerData={soccerData} /> */}
+          <Route path="/yesterday" component={Yesterday} />
+          <Today />
+          <Tomorrow />
         </div>
       );
     }
@@ -32,7 +37,8 @@ const Home = () => {
   return ( 
     <main>  
       <ToastContainer />
-      <Container maxWidth="lg" className={container}>
+      <Container maxWidth="xl" className={container}>
+        <Tabs />
         {renderContent()}
       </Container>  
     </main>
