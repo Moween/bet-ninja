@@ -8,7 +8,6 @@ async function fetchMatches() {
   const response = await httpService(
     `${process.env.REACT_APP_BASE_URL}/tip?type=over2&from=${yesterdayDate}&to=${tomorrowDate}`
   );
-  console.log(response.data);
   return response.data;
 }
 // Async Logic using middleware
