@@ -3,7 +3,6 @@ import { useSelector } from 'react-redux';
 import parseJSON from 'date-fns/parseJSON';
 import Box from "@material-ui/core/Box";
 import Table from './Table';
-import DatePicker from './DatePicker';
 import { getDate } from '../utils/index';
 
 const Today = () => {
@@ -25,7 +24,6 @@ const Today = () => {
 
   return ( 
     <Box sx={{ overflowX: 'auto'}}>
-      <DatePicker />
       <Table soccerData={todayMatches} date={todayDate} />
     </Box>
   );
