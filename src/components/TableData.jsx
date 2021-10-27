@@ -2,8 +2,8 @@ import React from 'react';
 import Box from '@material-ui/core/Box';
 import { getTime } from '../utils';
 
-const TableData = ({ game }) => {
-  const { date, league, homeTeam, awayTeam, overUnderOdd, tip, score } = game;
+const TableData = ({ match }) => {
+  const { date, league, homeTeam, awayTeam, overUnderOdd, tip, score } = match;
   return (
     <tr>
       <td className="time">
