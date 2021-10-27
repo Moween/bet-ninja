@@ -28,8 +28,8 @@ const AppleTabs = () => {
       aria-label="Tabs where selection follows "
     >
       <Tab classes={tabItemStyles} disableRipple label={<Link href="/yesterday">Yesterday</Link>} />
-      <Tab classes={tabItemStyles} disableRipple label={<Link href="#today">Today</Link>} />
-      <Tab classes={tabItemStyles} disableRipple label={<Link href="#tomorrow">Tomorrow</Link>}  />
+      <Tab classes={tabItemStyles} disableRipple label={<Link href="/">Today</Link>} />
+      <Tab classes={tabItemStyles} disableRipple label={<Link href="/tomorrow">Tomorrow</Link>}  />
     </Tabs>
   );
 };
