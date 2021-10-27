@@ -5,7 +5,7 @@ const historySlice =  createSlice({
   name: 'historySoccerData',
   initialState: {
     status: 'idle',
-    soccerData: '',
+    soccerData: [],
   },
   reducers: {},
   extraReducers(builder) {
@@ -19,7 +19,8 @@ const historySlice =  createSlice({
         state.soccerData = state.soccerData.concat(action.payload);
       })
       .addCase(fetchHistory.rejected, (state) => {
-        state.status = 'failed'
+        state.status = 'failed';
+        state.soccerData = '';
       })
   }
 })
