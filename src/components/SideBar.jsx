@@ -6,6 +6,7 @@ import Divider from "@material-ui/core/Divider";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
+import DatePicker from './DatePicker';
 
 const SideBar = () => {
   const drawerWidth = "18%";
@@ -28,6 +29,10 @@ const SideBar = () => {
         <Toolbar />
         <Box sx={{ overflow: "hidden" }}>
           <List>
+            <ListItem sx={{marginTop: '1rem'}}>
+              <DatePicker />
+            </ListItem>
+            <Divider />
             {["HighLight", "Live", "Promo"].map((text, index) => (
               <ListItem
                 button
