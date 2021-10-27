@@ -8,7 +8,7 @@ const navLinks = [
   },
    {
     name: 'History',
-    path: '/history',
+    path: '/pages/history',
   },{
     name: 'Promo',
     path: '/',
