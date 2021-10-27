@@ -6,13 +6,15 @@ const navLinks = [
     name: 'Sports',
     path: '/',
   },
-   {
+  {
     name: 'History',
     path: '/pages/history',
-  },{
+  },
+  {
     name: 'Promo',
     path: '/',
-  },{
+  },
+  {
     name: 'FAQ',
     path: '/',
   },
