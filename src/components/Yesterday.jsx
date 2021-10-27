@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import parseJSON from 'date-fns/parseJSON';
 import subDays from 'date-fns/subDays';
