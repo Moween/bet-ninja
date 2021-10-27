@@ -152,7 +152,7 @@ aside {
 }
 
 main {
-  width: 70%;
+  width: 50%;
   padding: 6.25rem 2rem;
 }
 
@@ -163,7 +163,7 @@ main {
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
-  width: 70%;
+  width: 100%;
   font-size: 0.75rem;
   margin-top: 2rem;
   table-layout: auto;
