@@ -156,8 +156,9 @@ main {
   padding: 6.25rem 2rem;
 }
 
-#tomorrow {
-  margin-top: 100px;
+main .loadingText {
+  margin-top: 0.5rem;
+  text-align: center;
 }
 
 table {
