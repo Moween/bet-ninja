@@ -29,23 +29,11 @@ const SideBar = () => {
         <Toolbar />
         <Box sx={{ overflow: "hidden" }}>
           <List>
-            <ListItem sx={{marginTop: '1rem'}}>
+            <ListItem sx={{marginTop: '1rem', marginBottom: '1rem'}}>
               <DatePicker />
             </ListItem>
             <Divider />
-            {["HighLight", "Live", "Promo"].map((text, index) => (
-              <ListItem
-                button
-                key={text}
-                sx={{ paddingLeft: '0.5rem', marginLeft: "1.05rem" }}
-              >
-                <ListItemText primary={text} />
-              </ListItem>
-            ))}
-          </List>
-          <Divider />
-          <List>
-            {["Soccer", "Winners", "Spam"].map((text, index) => (
+            {["Soccer", "HighLight", "Live", "Promo"].map((text, index) => (
               <ListItem
                 button
                 key={text}
