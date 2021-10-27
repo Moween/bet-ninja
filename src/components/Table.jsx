@@ -1,9 +1,7 @@
 import React from "react";
-import { useSelector } from 'react-redux';
 import TableData from "./TableData";
 
-const Table = () => {
-  const soccerData = useSelector(state => state.soccerData.soccerData);
+const Table = ({ soccerData }) => {
   return (
     <table>
       <colgroup>
@@ -19,7 +17,7 @@ const Table = () => {
         </tr>
       </thead>
       <tbody>
-        {soccerData.map(game => <TableData key={game.fid} game={game} />)}
+        {soccerData.map(match => <TableData key={match.fid} match={match} />)}
       </tbody>
     </table>
   );
