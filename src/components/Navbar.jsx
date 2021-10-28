@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const navLinks = [
   {
-    name: 'Sports',
+    name: 'Home',
     path: '/',
   },
   {
