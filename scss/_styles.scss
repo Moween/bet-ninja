@@ -72,10 +72,10 @@ aside {
 main {
   width: 50%;
   padding: 6.25rem 2rem;
-}
-
-#tomorrow {
-  margin-top: 100px;
+  .loadingText {
+    margin-top: 0.5rem;
+    text-align: center;
+  }
 }
 
 table {
