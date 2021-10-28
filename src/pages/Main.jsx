@@ -38,10 +38,10 @@ const Home = () => {
   };
   return (
     <main>
-      <ToastContainer />
       <Container maxWidth="xl" className={container}>
         <Tabs />
         {renderContent()}
+        <ToastContainer />
       </Container>
     </main>
   );
