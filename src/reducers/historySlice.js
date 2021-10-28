@@ -9,6 +9,7 @@ const historySlice = createSlice({
   },
   reducers: {
     fetchDataStored: (state, action) => {
+      state.status = 'succeeded';
       state.soccerData = action.payload;
     },
   },
