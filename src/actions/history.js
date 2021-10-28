@@ -7,7 +7,7 @@ async function fetchPastMatches() {
   const response = await httpService(
     `${
       process.env.REACT_APP_BASE_URL
-    }/tip?type=over2&from=${pastThirtyDays}&to=${lightFormat(new Date(), "yyyy-MM-dd")}
+    }/tip?type=over2&from=${pastThirtyDays}&to=${lightFormat(subDays(new Date(), 1), "yyyy-MM-dd")}
     `
   );
   return response.data;
