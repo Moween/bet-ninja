@@ -10,7 +10,7 @@ const Yesterday = () => {
   const [yesterdayMatches, setYesterdayMatches] = useState([]);
   const soccerData = useSelector(state => state.soccerData.soccerData);
 
-  const filterYesterdayMatches = () => {
+  const filterYesterdayMatches = () => { // Filter out yesterday matches
     return  soccerData.filter(match => {
       const date = getDate(parseJSON(match.date));
       return date === yesterdayDate;
