@@ -1,0 +1,230 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  color: silver;
+}
+
+.header {
+  width: 100%;
+  background-color: black;
+  position: fixed;
+  top: 0;
+  z-index: 1201;
+}
+
+.header__div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header .nav {
+  width: auto;
+  margin-left: 2rem;
+}
+
+.header .nav_list {
+  width: 100%;
+}
+
+.header .nav_list a {
+  color: silver;
+  text-decoration: none;
+  width: 15%;
+  font-family: 1.5rem;
+  padding: 0.5rem;
+}
+
+.header .nav_list a:hover {
+  color: #15334e;
+}
+
+.searchBox {
+  margin-left: auto;
+  background: #15334e 28%;
+  height: 30px;
+  border-radius: 30px;
+}
+
+.searchBox:hover .searchInput {
+  width: 200px;
+  padding: 0 6px;
+}
+
+.searchBox .searchButton {
+  color: white;
+  float: right;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #15334e 28%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.searchBox .searchInput {
+  border: none;
+  background: none;
+  outline: none;
+  float: left;
+  color: silver;
+  font-size: 1rem;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  line-height: 30px;
+  width: 0px;
+}
+
+aside {
+  margin-top: 6.25rem;
+  width: 20%;
+}
+
+main {
+  width: 50%;
+  padding: 6.25rem 2rem;
+}
+
+main .loadingText {
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.75rem;
+  margin-top: 2rem;
+  table-layout: auto;
+}
+
+table thead {
+  font-weight: bold;
+  -webkit-box-shadow: 3px 3px 2px 1px rgba(0, 0, 0, 0.2);
+          box-shadow: 3px 3px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+table thead th {
+  padding: 1rem;
+  color: whitesmoke;
+}
+
+table thead th:nth-of-type(1) {
+  text-align: left;
+  padding-left: 1rem;
+}
+
+table tbody td {
+  -webkit-box-shadow: 3px 3px 2px 1px rgba(0, 0, 0, 0.2);
+          box-shadow: 3px 3px 2px 1px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  padding: 0.5rem;
+}
+
+table tbody td span {
+  display: inline-block;
+  margin: auto;
+}
+
+table tbody .time {
+  position: relative;
+  width: 10%;
+}
+
+table tbody .time div {
+  font-size: 0.625rem;
+  font-weight: bold;
+  display: block;
+  position: absolute;
+  top: 30%;
+  right: 0;
+}
+
+table .team {
+  text-align: left;
+  padding-left: 0.5rem;
+}
+
+table .team:first-of-type {
+  margin-bottom: 0.425rem;
+}
+
+@media screen and (max-width: 620px) {
+  .searchBox:hover > .searchInput {
+    width: 150px;
+    padding: 0 6px;
+  }
+}
+/*# sourceMappingURL=App.css.map */
