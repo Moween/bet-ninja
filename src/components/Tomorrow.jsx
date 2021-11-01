@@ -28,7 +28,7 @@ const Tomorrow = () => {
       {!soccerData.length === 0 ? (
         <Table soccerData={tomorrowMatches} date={tomorrowDate} />
       ) : (
-        <Typography variant="h6" align="center" component="p">
+        <Typography variant="h6" sx={{ marginTop: '2rem' }} align="center" component="p">
           Not available....
         </Typography>
       )}
