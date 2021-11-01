@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { ToastContainer } from 'react-toastify';
+import Box from '@material-ui/core/Box';
+import Typography from '@material-ui/core/Typography';
 import fetchHistory from '../actions/history';
 import { fetchDataStored } from '../reducers/historySlice';
 import Table from '../components/Table';
@@ -46,7 +48,7 @@ const History = () => {
 
   const renderContent = () => {
     if (soccerDataStatus === 'loading') {
-      return <p className='loading-text'>Loading...</p>;
+      return <Typography component="p" className='loading-text'>Loading...</Typography>;
     } else if (soccerDataStatus === 'succeeded') {
       // Save data to sessionStorage
       sessionStorage.setItem('pastMatches', JSON.stringify(soccerData));
@@ -59,10 +61,10 @@ const History = () => {
     }
   };
   return (
-    <div>
+    <Box>
       <ToastContainer />
-      <div style={{ marginTop: "6rem" }}>{renderContent()}</div>
-    </div>
+      <Box style={{ marginTop: "6rem" }}>{renderContent()}</Box>
+    </Box>
   );
 };
 

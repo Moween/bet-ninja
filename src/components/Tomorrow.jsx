@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import parseJSON from 'date-fns/parseJSON';
 import addDays from 'date-fns/addDays';
+import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import Table from './Table';
 import { getDate } from '../utils/index';
@@ -23,7 +24,7 @@ const Tomorrow = () => {
     setTomorrowMatches(tomorrowMatches);
   }, []);
   return (
-    <div>
+    <Box>
       {!soccerData.length === 0 ? (
         <Table soccerData={tomorrowMatches} date={tomorrowDate} />
       ) : (
@@ -31,7 +32,7 @@ const Tomorrow = () => {
           Not available....
         </Typography>
       )}
-    </div>
+    </Box>
   );
 };
 
