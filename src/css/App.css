@@ -57,6 +57,7 @@ body {
   background-color: black;
   position: fixed;
   top: 0;
+  z-index: 1201;
 }
 
 .header__div {
@@ -104,7 +105,8 @@ aside {
 }
 
 main {
-  width: 50%;
+  width: 70%;
+  margin: 0 auto;
   padding: 6.25rem 2rem;
 }
 

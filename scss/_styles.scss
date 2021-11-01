@@ -7,6 +7,7 @@ body {
   background-color: $black;
   position: fixed;
   top: 0;
+  z-index: 1201;
   &__div {
     @include flexItems(row, flex-start, center);
   }
@@ -37,7 +38,8 @@ aside {
 }
 
 main {
-  width: 50%;
+  width: 70%;
+  margin: 0 auto;
   padding: 6.25rem 2rem;
   .loadingText {
     margin-top: 0.5rem;
