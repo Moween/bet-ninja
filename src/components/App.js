@@ -2,9 +2,10 @@ import React from 'react';
 import { ThemeProvider } from '@material-ui/core/styles';
 import { Route, Switch } from 'react-router-dom';
 import { theme } from '../utils/muiStyles';
-import Home from '../pages/Main';
 import Header from './Header';
+import Home from '../pages/Main';
 import History from '../pages/History';
+import Footer from './Footer';
 import '../css/App.css';
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Route path='/pages/history' component={History} />
         <Route path='/' component={Home} />
       </Switch>
+      <Footer />
     </ThemeProvider>
   )
 }
