@@ -4,7 +4,7 @@ const Footer = () => {
   return ( 
     <footer>
       <p className="copyright-text">&copy; {new Date().getFullYear()}  BetNinja</p>
-      <nav className="footer-nav">
+      <nav aria-label="footer-nav"  className="footer-nav">
         <ul className="footer-list">
           <li>Terms</li>
           <li>Privacy</li>
