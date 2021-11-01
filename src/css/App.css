@@ -57,7 +57,6 @@ body {
   background-color: black;
   position: fixed;
   top: 0;
-  z-index: 1201;
 }
 
 .header__div {
@@ -68,82 +67,35 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
 .header .nav {
-  width: auto;
-  margin-left: 2rem;
+  width: 50%;
+  margin-left: 5rem;
 }
 
 .header .nav_list {
   width: 100%;
+  text-align: center;
 }
 
 .header .nav_list a {
   color: silver;
   text-decoration: none;
-  width: 15%;
+  width: 20%;
   font-family: 1.5rem;
   padding: 0.5rem;
+  margin: 1rem;
 }
 
 .header .nav_list a:hover {
   color: #15334e;
-}
-
-.searchBox {
-  margin-left: auto;
-  background: #15334e 28%;
-  height: 30px;
-  border-radius: 30px;
-}
-
-.searchBox:hover .searchInput {
-  width: 200px;
-  padding: 0 6px;
-}
-
-.searchBox .searchButton {
-  color: white;
-  float: right;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background: #15334e 28%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-}
-
-.searchBox .searchInput {
-  border: none;
-  background: none;
-  outline: none;
-  float: left;
-  color: silver;
-  font-size: 1rem;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-  line-height: 30px;
-  width: 0px;
 }
 
 aside {

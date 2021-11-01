@@ -3,7 +3,6 @@ import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import SportsSoccerIcon from '@material-ui/icons/SportsSoccer';
 import { useStyles } from '../utils/muiStyles';
-import SearchBar from './SearchBar';
 import Navbar from './Navbar';
 
 const Header = () => {
@@ -29,7 +28,6 @@ const Header = () => {
             </Typography>
           </div>
           <Navbar />
-          <SearchBar />
         </div>
       </Container>
     </header>
