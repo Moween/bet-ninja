@@ -14,10 +14,6 @@ const navLinks = [
     name: 'Promo',
     path: '/',
   },
-  {
-    name: 'FAQ',
-    path: '/',
-  },
 ];
 
 const Navbar = () => {
