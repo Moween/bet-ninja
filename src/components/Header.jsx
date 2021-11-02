@@ -13,15 +13,12 @@ const Header = () => {
         <div className="header__div">
           <div className={logoContainer}>
             <SportsSoccerIcon className={soccerIcon} />
-            <Typography 
-              className={brandLogo} 
-              variant="h3" component="h1" 
-            >
+            <Typography className={brandLogo} variant="h3" component="h1">
               Bet
-              <Typography 
-                variant="h3" 
-                component="span" 
-                sx={{ color: '#e70008'}}
+              <Typography
+                variant="h3"
+                component="span"
+                sx={{ color: '#e70008' }}
               >
                 Ninja
               </Typography>

@@ -11,7 +11,8 @@ const Tomorrow = () => {
   const [tomorrowMatches, setTomorrowMatches] = useState([]);
   const soccerData = useSelector((state) => state.soccerData.soccerData);
 
-  const filterTomorrowMatches = () => { // Filter out tomorrow's matches
+  const filterTomorrowMatches = () => {
+    // Filter out tomorrow's matches
     return soccerData.filter((match) => {
       const date = getDate(parseJSON(match.date));
       return date === tomorrowDate;
@@ -21,7 +22,9 @@ const Tomorrow = () => {
   useEffect(() => {
     const tomorrowMatches = filterTomorrowMatches;
     setTomorrowMatches(tomorrowMatches);
+    // eslint-disable-next-line
   }, []);
+
   return (
     <div>
       {!soccerData.length === 0 ? (
