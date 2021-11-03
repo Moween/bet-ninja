@@ -10,14 +10,6 @@ const navLinks = [
     name: 'History',
     path: '/pages/history',
   },
-  {
-    name: 'Promo',
-    path: '/',
-  },
-  {
-    name: 'FAQ',
-    path: '/',
-  },
 ];
 
 const Navbar = () => {

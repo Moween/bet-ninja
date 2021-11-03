@@ -7,23 +7,22 @@ import DatePicker from '@material-ui/lab/DatePicker';
 import { datePicked } from '../reducers/dateSlice';
 
 const Calendar = () => {
-  const date = useSelector(state => state.date.date);
+  const date = useSelector((state) => state.date.date);
   const dispatch = useDispatch();
   const handleChange = (value) => {
     dispatch(datePicked(value));
-  }
-  return (   
+  };
+  return (
     <LocalizationProvider dateAdapter={AdapterDateFns}>
       <DatePicker
         label="Basic example"
         value={date}
-        sx={{  }}
+        sx={{}}
         onChange={handleChange}
         renderInput={(params) => <TextField {...params} />}
       />
     </LocalizationProvider>
-  
   );
-}
- 
+};
+
 export default Calendar;

@@ -8,24 +8,26 @@ import { getDate } from '../utils/index';
 const Yesterday = () => {
   let yesterdayDate = getDate(subDays(new Date(), 1));
   const [yesterdayMatches, setYesterdayMatches] = useState([]);
-  const soccerData = useSelector(state => state.soccerData.soccerData);
+  const soccerData = useSelector((state) => state.soccerData.soccerData);
 
-  const filterYesterdayMatches = () => { // Filter out yesterday matches
-    return  soccerData.filter(match => {
+  const filterYesterdayMatches = () => {
+    // Filter out yesterday matches
+    return soccerData.filter((match) => {
       const date = getDate(parseJSON(match.date));
       return date === yesterdayDate;
     });
-  }
+  };
 
   useEffect(() => {
-    const yesterdayMatches = filterYesterdayMatches; 
-    setYesterdayMatches(yesterdayMatches)
+    const yesterdayMatches = filterYesterdayMatches;
+    setYesterdayMatches(yesterdayMatches);
+    // eslint-disable-next-line
   }, []);
-  return ( 
+  return (
     <div id="yesterday">
       <Table soccerData={yesterdayMatches} date={yesterdayDate} />
     </div>
   );
-}
- 
+};
+
 export default Yesterday;

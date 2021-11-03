@@ -98,6 +98,27 @@ table {
   }
 }
 
+footer {
+  width: 100%;
+  height: 10vh;
+  background-color: black;
+  @include flexItems(row, space-between, center);
+  .copyright-text {
+    margin-left: 2rem;
+  }
+  .footer-nav {
+    width: 40%;
+    .footer-list {
+      @include flexItems(row, center, center);
+      li {
+        display: inline-block;
+        margin-left: 2rem;
+      }
+    }
+  }
+
+}
+
 @media screen and (max-width: 620px) {
   .searchBox:hover > .searchInput {
     width: 150px;
