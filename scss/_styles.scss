@@ -107,12 +107,12 @@ footer {
     margin-left: 2rem;
   }
   .footer-nav {
-    width: 40%;
+    width: 45%;
     .footer-list {
       @include flexItems(row, center, center);
       li {
         display: inline-block;
-        margin-left: 2rem;
+        margin-left: 1rem;
       }
     }
   }
