@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import parseJSON from 'date-fns/parseJSON';
 import subDays from 'date-fns/subDays';
+import Box from '@material-ui/core/Box';
 import Table from './Table';
 import { getDate } from '../utils/index';
 
@@ -24,9 +25,9 @@ const Yesterday = () => {
     // eslint-disable-next-line
   }, []);
   return (
-    <div id="yesterday">
+    <Box id="yesterday">
       <Table soccerData={yesterdayMatches} date={yesterdayDate} />
-    </div>
+    </Box>
   );
 };
 

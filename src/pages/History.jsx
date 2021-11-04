@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { ToastContainer } from 'react-toastify';
+import Box from '@material-ui/core/Box';
 import fetchHistory from '../actions/history';
 import { fetchDataStored } from '../reducers/historySlice';
 import Table from '../components/Table';
@@ -59,10 +60,10 @@ const History = () => {
     }
   };
   return (
-    <div>
+    <Box>
       <ToastContainer />
-      <div style={{ marginTop: "6rem" }}>{renderContent()}</div>
-    </div>
+      <Box style={{ marginTop: "6rem" }}>{renderContent()}</Box>
+    </Box>
   );
 };
 
