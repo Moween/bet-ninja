@@ -3,11 +3,12 @@ import { toast } from 'react-toastify';
 
 // Intercept errors with axios interceptors
 axios.interceptors.response.use(null, (error) => {
-  const expectedError = error.response
-  && error.response.status >= 400
-  && error.response.status < 500;
+  const expectedError =
+    error.response &&
+    error.response.status >= 400 &&
+    error.response.status < 500;
 
-  if(!expectedError) {
+  if (!expectedError) {
     // For Unexpected error
     toast.error('An unexpected error occured!');
   }
@@ -15,14 +16,16 @@ axios.interceptors.response.use(null, (error) => {
   return Promise.reject(error);
 });
 
-const httpService = async (url) => {
+const httpService = async (startDate, endDate) => {
   try {
-    const response = await axios.get(url);
+    const response = await axios.get(
+      `${process.env.REACT_APP_BASE_URL}/tip?type=over2&from=${startDate}&to=${endDate}`
+    );
     return response;
   } catch (error) {
-    if(error.response && error.response.status === 404) {
-     toast.error('Bad Request');
-    } 
+    if (error.response && error.response.status === 404) {
+      toast.error('Bad Request');
+    }
   }
 };
 
