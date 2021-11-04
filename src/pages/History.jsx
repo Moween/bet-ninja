@@ -2,12 +2,15 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { ToastContainer } from 'react-toastify';
 import Box from '@material-ui/core/Box';
+import Typography from '@material-ui/core/Typography';
 import fetchHistory from '../actions/history';
 import { fetchDataStored } from '../reducers/historySlice';
 import Table from '../components/Table';
 import { getDate } from '../utils/index';
+import { useStyles } from '../utils/muiStyles'
 
 const History = () => {
+  const { loadingText } = useStyles();
   const soccerData = useSelector((state) => state.pastMatchesData.soccerData);
   const soccerDataStatus = useSelector((state) => state.pastMatchesData.status);
   const dispatch = useDispatch();
@@ -47,7 +50,11 @@ const History = () => {
 
   const renderContent = () => {
     if (soccerDataStatus === 'loading') {
-      return <p className='loading-text'>Loading...</p>;
+      return (
+        <Typography variant="body1" component="p" classes={loadingText}>
+          Loading...
+        </Typography>
+      );
     } else if (soccerDataStatus === 'succeeded') {
       // Save data to sessionStorage
       sessionStorage.setItem('pastMatches', JSON.stringify(soccerData));
@@ -60,9 +67,9 @@ const History = () => {
     }
   };
   return (
-    <Box>
+    <Box component="main">
       <ToastContainer />
-      <Box style={{ marginTop: "6rem" }}>{renderContent()}</Box>
+      <Box style={{ marginTop: '3rem' }}>{renderContent()}</Box>
     </Box>
   );
 };
