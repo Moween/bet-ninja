@@ -1,4 +1,5 @@
 import React from 'react';
+import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import SportsSoccerIcon from '@material-ui/icons/SportsSoccer';
@@ -8,10 +9,10 @@ import Navbar from './Navbar';
 const Header = () => {
   const { brandLogo, logoContainer, soccerIcon } = useStyles();
   return (
-    <header className="header">
+    <Box component="header" className="header">
       <Container maxWidth="false">
-        <div className="header__div">
-          <div className={logoContainer}>
+        <Box className="header__div">
+          <Box className={logoContainer}>
             <SportsSoccerIcon className={soccerIcon} />
             <Typography className={brandLogo} variant="h3" component="h1">
               Bet
@@ -23,11 +24,11 @@ const Header = () => {
                 Ninja
               </Typography>
             </Typography>
-          </div>
+          </Box>
           <Navbar />
-        </div>
+        </Box>
       </Container>
-    </header>
+    </Box>
   );
 };
 

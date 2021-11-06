@@ -105,7 +105,7 @@ aside {
 }
 
 main {
-  width: 70%;
+  width: 60%;
   margin: 0 auto;
   padding: 6.25rem 2rem;
 }
@@ -199,7 +199,7 @@ footer .copyright-text {
 }
 
 footer .footer-nav {
-  width: 40%;
+  width: 45%;
 }
 
 footer .footer-nav .footer-list {
@@ -220,7 +220,7 @@ footer .footer-nav .footer-list {
 
 footer .footer-nav .footer-list li {
   display: inline-block;
-  margin-left: 2rem;
+  margin-left: 1rem;
 }
 
 @media screen and (max-width: 620px) {

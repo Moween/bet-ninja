@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
+import Typography from '@material-ui/core/Typography';
 import { ToastContainer } from 'react-toastify'; // To display network errors
 import fetchSoccerData from '../actions/soccerData';
 import { useStyles } from '../utils/muiStyles';
@@ -20,7 +21,7 @@ const Home = () => {
 
   const renderContent = () => {
     if (soccerDataStatus === 'loading') {
-      return <p className="loadingText">Loading...</p>;
+      return <Typography component="p" className="loadingText">Loading...</Typography>;
     } else if (soccerDataStatus === 'succeeded') {
       return (
         <Box>          
