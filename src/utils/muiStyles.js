@@ -38,24 +38,23 @@ export const theme = createTheme({
         root: {
           color: '#ccc',
         },
-      }
+      },
     },
     MuiFormLabel: {
       styleOverrides: {
         root: {
           color: '#ccc',
         },
-      }
+      },
     },
     MuiOutlinedInput: {
       styleOverrides: {
         notchedOutline: {
-          borderColor: '#ccc'
-        },      
-      }
-    }
+          borderColor: '#ccc',
+        },
+      },
+    },
   },
-  
 });
 
 export const useStyles = makeStyles((theme) => ({
