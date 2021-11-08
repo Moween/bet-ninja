@@ -5,7 +5,7 @@ import AdapterDateFns from '@material-ui/lab/AdapterDateFns';
 import LocalizationProvider from '@material-ui/lab/LocalizationProvider';
 import DatePicker from '@material-ui/lab/DatePicker';
 
-const Calendar = ({ date, action }) => {
+const Calendar = ({ label, date, action }) => {
   const dispatch = useDispatch();
   const handleChange = (value) => {
     dispatch(action(value));
@@ -13,9 +13,8 @@ const Calendar = ({ date, action }) => {
   return (
     <LocalizationProvider dateAdapter={AdapterDateFns}>
       <DatePicker
-        label="Basic example"
+        label={label}
         value={date}
-        sx={{}}
         onChange={handleChange}
         renderInput={(params) => <TextField {...params} />}
       />
