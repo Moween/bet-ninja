@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import fetch from '../actions/datePicker';
+import fetchWithDatePicker from '../actions/datePicker';
 
 const dateSlice = createSlice({
   name: 'date',
@@ -15,23 +15,22 @@ const dateSlice = createSlice({
     },
     endDatePicked: (state, action) => {
       state.endDate = action.payload;
-    }
+    },
   },
   extraReducers(builder) {
     builder
-    .addCase(fetch.pending, (state) => {
-      state.status = 'loading';
-    })
-    .addCase(fetch.fulfilled, (state, action) => {
-      state.status = 'succeeded';
-      state.soccerData = state.soccerData.concat(action.payload);
-    })
-    .addCase(fetch.rejected, (state) => {
-      state.status = 'failed';
-      state.soccerData = '';
-    })
-
-  }
+      .addCase(fetchWithDatePicker.pending, (state) => {
+        state.status = 'loading';
+      })
+      .addCase(fetchWithDatePicker.fulfilled, (state, action) => {
+        state.status = 'succeeded';
+        state.soccerData = state.soccerData.concat(action.payload);
+      })
+      .addCase(fetchWithDatePicker.rejected, (state) => {
+        state.status = 'failed';
+        state.soccerData = '';
+      });
+  },
 });
 
 export const { startDatePicked, endDatePicked } = dateSlice.actions;
