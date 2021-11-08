@@ -33,6 +33,27 @@ export const theme = createTheme({
         component: LinkBehavior,
       },
     },
+    MuiInputBase: {
+      styleOverrides: {
+        root: {
+          color: '#ccc',
+        },
+      },
+    },
+    MuiFormLabel: {
+      styleOverrides: {
+        root: {
+          color: '#ccc',
+        },
+      },
+    },
+    MuiOutlinedInput: {
+      styleOverrides: {
+        notchedOutline: {
+          borderColor: '#ccc',
+        },
+      },
+    },
   },
 });
 
