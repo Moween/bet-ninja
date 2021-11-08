@@ -3,7 +3,7 @@ import Box from '@material-ui/core/Box';
 import { getTime } from '../utils';
 
 const TableData = ({ match }) => {
-  const { date, league, homeTeam, awayTeam, overUnderOdd, tip, score } = match;
+  const { date, league, homeTeam, awayTeam, odd, tip, score } = match;
   return (
     <tr>
       <td className="time">
@@ -29,7 +29,7 @@ const TableData = ({ match }) => {
         <span>{league}</span>
       </td>
       <td>
-        <span>{overUnderOdd}</span>
+        <span>{odd}</span>
       </td>
       <td>
         <span>{tip}</span>
