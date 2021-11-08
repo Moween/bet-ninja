@@ -72,4 +72,8 @@ export const useStyles = makeStyles((theme) => ({
     color: 'white',
   },
   // TableData Styles
+  loadingText: {
+    textAlign: 'center',
+    marginTop: '0.5rem',
+  },
 }));

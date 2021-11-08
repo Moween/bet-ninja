@@ -1,12 +1,23 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { ToastContainer } from 'react-toastify';
+import Box from '@material-ui/core/Box';
+import Typography from '@material-ui/core/Typography';
 import fetchHistory from '../actions/history';
 import { fetchDataStored } from '../reducers/historySlice';
 import Table from '../components/Table';
 import { getDate } from '../utils/index';
+import { useStyles } from '../utils/muiStyles';
+import Pagination from '../components/Pagination';
 
 const History = () => {
+  const { loadingText } = useStyles();
+  const [page, setPage] = useState(1);
+  const tablePerPage = 3;
+
+  const handleChange = (event, value) => {
+    setPage(value);
+  };
   const soccerData = useSelector((state) => state.pastMatchesData.soccerData);
   const soccerDataStatus = useSelector((state) => state.pastMatchesData.status);
   const dispatch = useDispatch();
@@ -46,23 +57,32 @@ const History = () => {
 
   const renderContent = () => {
     if (soccerDataStatus === 'loading') {
-      return <p className='loading-text'>Loading...</p>;
+      return (
+        <Typography variant="body1" component="p" classes={loadingText}>
+          Loading...
+        </Typography>
+      );
     } else if (soccerDataStatus === 'succeeded') {
       // Save data to sessionStorage
       sessionStorage.setItem('pastMatches', JSON.stringify(soccerData));
-
-      return Object.entries(groupMatchesByDate(soccerData, 'date')).map(
-        ([key, soccerData]) => {
+      return Object.entries(groupMatchesByDate(soccerData, 'date'))
+        .slice((page - 1) * tablePerPage, page * tablePerPage)
+        .map(([key, soccerData]) => {
           return <Table key={key} soccerData={soccerData} date={key} />;
-        }
-      );
+        });
     }
   };
   return (
-    <div>
+    <Box component="main">
       <ToastContainer />
-      <div style={{ marginTop: "6rem" }}>{renderContent()}</div>
-    </div>
+      <Box style={{ marginTop: '3rem' }}>{renderContent()}</Box>
+      <Pagination
+        items={Object.entries(groupMatchesByDate(soccerData, 'date'))}
+        page={page}
+        tablePerPage={tablePerPage}
+        handleChange={handleChange}
+      />
+    </Box>
   );
 };
 
