@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react';
 import { createTheme } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
-import { Link  } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 // Customize Mui Link Component
 const LinkBehavior = forwardRef((props, ref) => {
@@ -11,20 +11,21 @@ const LinkBehavior = forwardRef((props, ref) => {
 });
 
 export const theme = createTheme({
-  breakpoints: { // Media Query Breakpoint
-    values:{
+  breakpoints: {
+    // Media Query Breakpoint
+    values: {
       xs: 0,
       sm: 375,
       md: 768,
       lg: 1024,
       xl: 1140,
     },
-    unit: 'px'
+    unit: 'px',
   },
   palette: {
     secondary: {
-      main: '#42b72a'
-    }
+      main: '#42b72a',
+    },
   },
   components: {
     MuiLink: {
@@ -37,24 +38,23 @@ export const theme = createTheme({
         root: {
           color: '#ccc',
         },
-      }
+      },
     },
     MuiFormLabel: {
       styleOverrides: {
         root: {
           color: '#ccc',
         },
-      }
+      },
     },
     MuiOutlinedInput: {
       styleOverrides: {
         notchedOutline: {
-          borderColor: '#ccc'
-        },      
-      }
-    }
+          borderColor: '#ccc',
+        },
+      },
+    },
   },
-  
 });
 
 export const useStyles = makeStyles((theme) => ({
@@ -62,18 +62,14 @@ export const useStyles = makeStyles((theme) => ({
   brandLogo: {
     color: '#ccc',
     padding: 10,
-    paddingLeft: 0
+    paddingLeft: 0,
   },
   logoContainer: {
     display: 'flex',
     alignItems: 'center',
   },
   soccerIcon: {
-    color: 'white'
+    color: 'white',
   },
   // TableData Styles
-
 }));
-
-
-
