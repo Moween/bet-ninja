@@ -19,7 +19,7 @@ axios.interceptors.response.use(null, (error) => {
 const httpService = async (startDate, endDate) => {
   try {
     const response = await axios.get(
-      `${process.env.REACT_APP_BASE_URL}/tip?type=over2&from=${startDate}&to=${endDate}`
+      `${process.env.REACT_APP_BASE_URL}/tip?from=${startDate}&to=${endDate}`
     );
     return response;
   } catch (error) {
