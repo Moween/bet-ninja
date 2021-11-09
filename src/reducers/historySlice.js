@@ -7,12 +7,7 @@ const historySlice = createSlice({
     status: 'idle',
     soccerData: [],
   },
-  reducers: {
-    fetchDataStored: (state, action) => {
-      state.status = 'succeeded';
-      state.soccerData = action.payload;
-    },
-  },
+  reducers: {},
   extraReducers(builder) {
     builder
       .addCase(fetchHistory.pending, (state) => {
