@@ -13,7 +13,7 @@ const Header = () => {
       <Container maxWidth="false">
         <Box className="header__div">
           <Box className={logoContainer}>
-            <SportsSoccerIcon className={soccerIcon} />
+            <SportsSoccerIcon className={soccerIcon} fontSize="large" />
             <Typography
               className={brandLogo}
               variant="h2"
