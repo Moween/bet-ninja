@@ -5,9 +5,13 @@ const PaginateData = ({ items, tablePerPage, page, handleChange }) => {
   return (
     <Pagination
       count={Math.ceil(items.length / tablePerPage)}
-      sx={{ mt: '2rem',
+      sx={{
+        mt: '2rem',
+        [`& .MuiPagination-ul`]: {
+         justifyContent: 'center'
+        },
         [`& .Mui-selected`]: {
-          color: '#ccc',
+          backgroundColor: '#ccc'
         }
       }}
       page={page}

@@ -58,12 +58,12 @@ const History = () => {
     <Box component="main">
       <ToastContainer />
       <Box style={{ marginTop: '3rem' }}>{renderContent()}</Box>
-      <Pagination
+      {soccerData && <Pagination
         items={Object.entries(groupMatchesByDate(soccerData, 'date'))}
         page={page}
         tablePerPage={tablePerPage}
         handleChange={handleChange}
-      />
+      />}
     </Box>
   );
 };
