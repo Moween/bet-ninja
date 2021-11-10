@@ -14,12 +14,17 @@ const Header = () => {
         <Box className="header__div">
           <Box className={logoContainer}>
             <SportsSoccerIcon className={soccerIcon} />
-            <Typography className={brandLogo} variant="h3" component="h1">
+            <Typography
+              className={brandLogo}
+              variant="h2"
+              component="h1"
+              sx={{ fontFamily: "'Lobster', cursive" }}
+            >
               Bet
               <Typography
-                variant="h3"
+                variant="h2"
                 component="span"
-                sx={{ color: '#e70008' }}
+                sx={{ color: '#612a11', fontFamily: "'Lobster', cursive"  }}
               >
                 Ninja
               </Typography>
