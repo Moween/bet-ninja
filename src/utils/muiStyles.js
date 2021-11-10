@@ -54,6 +54,21 @@ export const theme = createTheme({
         },
       },
     },
+    MuiButtonBase: {
+      styleOverrides: {
+        backgroundColor: '#ccc',
+      },
+    },
+    MuiPaginationItem: {
+      styleOverrides: {
+        outlined: {
+          color: '#131917',
+          borderColor: '#5f6468',
+          backgroundColor: '#5f6468',
+          fontWeight: 'bold',
+        },
+      },
+    },
   },
 });
 
