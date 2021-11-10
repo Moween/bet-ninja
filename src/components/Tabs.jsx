@@ -28,7 +28,15 @@ const AppleTabs = () => {
           },
           [`& .MuiButtonBase-root`]: {
             color: "#ccc", 
-          }
+          },
+          [`& .MuiTabs-indicator`]: {
+            color: '#5f6468',
+            backgroundColor:  '#5f6468',
+          },
+          [`& .Mui-selected`]: {
+            color: '#612a11', 
+          },
+          
         }}
         onChange={(e, index) => setTabIndex(index)}
         aria-label="Tabs"

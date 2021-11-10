@@ -11,11 +11,11 @@ const TableData = ({ match }) => {
           sx={{
             width: 'auto',
             height: 'auto',
-            bgcolor: '#e70008',
+            bgcolor: '#612a11',
             borderRadius: '0.125rem',
             marginTop: 'auto',
             color: '#ccc',
-            padding: '0.31rem'
+            padding: '0.31rem',
           }}
         >
           {getTime(date)}
