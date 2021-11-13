@@ -37,6 +37,9 @@ export const theme = createTheme({
       styleOverrides: {
         root: {
           color: '#ccc',
+          width: '9rem',
+          height: 'auto',
+          marginLeft: '0.5rem',
         },
       },
     },
@@ -44,6 +47,7 @@ export const theme = createTheme({
       styleOverrides: {
         root: {
           color: '#ccc',
+          fontWeight: 'bold',
         },
       },
     },
@@ -51,6 +55,13 @@ export const theme = createTheme({
       styleOverrides: {
         notchedOutline: {
           borderColor: '#ccc',
+        },
+      },
+    },
+    MuiSvgIcon: {
+      styleOverrides: {
+        root: {
+          color: '#ccc',
         },
       },
     },
@@ -91,4 +102,5 @@ export const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
     marginTop: '0.5rem',
   },
+  
 }));
