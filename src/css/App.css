@@ -77,8 +77,8 @@ body {
 }
 
 .header .nav {
-  width: 50%;
-  margin-left: 5rem;
+  width: auto;
+  margin-left: auto;
 }
 
 .header .nav_list {
