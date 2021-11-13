@@ -99,6 +99,11 @@ body {
   color: #612a11;
 }
 
+.header #filter_button.Mui-disabled {
+  opacity: .4;
+  background-color: #612a11;
+}
+
 aside {
   margin-top: 6.25rem;
   width: 20%;
