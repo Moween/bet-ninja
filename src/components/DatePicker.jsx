@@ -28,7 +28,7 @@ const DatePicker = () => {
         variant="contained"
         onClick={handleClick}
         sx={{
-          height: '7vh',
+          height: 'auto',
           textTransform: 'capitalize',
           backgroundColor: '#612a11',
           marginLeft: '0.5rem',
