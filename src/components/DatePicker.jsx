@@ -24,6 +24,7 @@ const DatePicker = () => {
       <Calendar label="Start" date={startDate} action={startDatePicked} />
       <Calendar label="End" date={endDate} action={endDatePicked} />
       <Button
+        id="filter_button"
         variant="contained"
         onClick={handleClick}
         sx={{
@@ -33,7 +34,7 @@ const DatePicker = () => {
           marginLeft: '0.5rem',
         }}
         href="/history"
-        disabled={startDate && endDate ? 'false' : 'true'}
+        disabled={startDate && endDate ? false : true}
       >
         Filter
       </Button>
