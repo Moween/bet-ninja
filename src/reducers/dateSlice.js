@@ -4,8 +4,8 @@ import fetchWithDatePicker from '../actions/datePicker';
 const dateSlice = createSlice({
   name: 'date',
   initialState: {
-    startDate: new Date(),
-    endDate: new Date(),
+    startDate: null,
+    endDate: null,
     status: 'idle',
     soccerData: [],
   },
