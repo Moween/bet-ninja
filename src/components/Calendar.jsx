@@ -15,8 +15,14 @@ const Calendar = ({ label, date, action }) => {
       <DatePicker
         label={label}
         value={date}
+        disableFuture
+        clearable
+        cancelLabel
+        okLabel
         onChange={handleChange}
-        renderInput={(params) => <TextField {...params} />}
+        renderInput={(params) => (
+          <TextField {...params} />
+        )}
       />
     </LocalizationProvider>
   );
