@@ -100,7 +100,6 @@ body {
 }
 
 .header #filter_button.Mui-disabled {
-  opacity: .4;
   background-color: #612a11;
 }
 
