@@ -12,8 +12,8 @@ body {
     @include flexItems(row, flex-start, center);
   }
   .nav {
-    width: 50%;
-    margin-left: 5rem;
+    width: auto;
+    margin-left: auto;
     &_list {
       width: 100%;
       text-align: center;
@@ -29,6 +29,10 @@ body {
         }
       }
     }
+  }
+  #filter_button.Mui-disabled {
+    opacity: .4;
+    background-color: #612a11;
   }
 }
 
@@ -116,7 +120,6 @@ footer {
       }
     }
   }
-
 }
 
 @media screen and (max-width: 620px) {

@@ -5,6 +5,7 @@ import Container from '@material-ui/core/Container';
 import SportsSoccerIcon from '@material-ui/icons/SportsSoccer';
 import { useStyles } from '../utils/muiStyles';
 import Navbar from './Navbar';
+import DatePicker from './DatePicker';
 
 const Header = () => {
   const { brandLogo, logoContainer, soccerIcon } = useStyles();
@@ -31,6 +32,7 @@ const Header = () => {
             </Typography>
           </Box>
           <Navbar />
+          <DatePicker />
         </Box>
       </Container>
     </Box>

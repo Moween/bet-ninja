@@ -77,8 +77,8 @@ body {
 }
 
 .header .nav {
-  width: 50%;
-  margin-left: 5rem;
+  width: auto;
+  margin-left: auto;
 }
 
 .header .nav_list {
@@ -97,6 +97,11 @@ body {
 
 .header .nav_list a:hover {
   color: #612a11;
+}
+
+.header #filter_button.Mui-disabled {
+  opacity: .4;
+  background-color: #612a11;
 }
 
 aside {
