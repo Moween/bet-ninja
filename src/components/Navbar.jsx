@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Link from '@mui/material/Link';
 
 const navLinks = [
   {
@@ -17,7 +17,7 @@ const Navbar = () => {
     <nav className="nav">
       <ul className="nav_list">
         {navLinks.map((navLink) => (
-          <Link to={navLink.path} key={navLink.name}>{navLink.name}</Link>
+          <Link href={navLink.path} key={navLink.name}>{navLink.name}</Link>
         ))}
       </ul>
     </nav>
