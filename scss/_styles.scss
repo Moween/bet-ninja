@@ -41,7 +41,7 @@ aside {
 }
 
 main {
-  width: 60%;
+  width: 80%;
   margin: 0 auto;
   padding: 6.25rem 2rem;
   .loadingText {
@@ -64,7 +64,6 @@ table {
       padding: 1rem;
       color: whitesmoke;
       &:nth-of-type(1) {
-        text-align: left;
         padding-left: 1rem;
       }
     }
@@ -76,7 +75,12 @@ table {
       padding: 0.5rem;
       span {
         display: inline-block;
-        margin: auto;
+      }
+      .red {
+        background-color: red;
+      }
+      .green {
+        background-color: green;
       }
     }
     .time {
@@ -85,19 +89,13 @@ table {
       div {
         font-size: 0.625rem;
         font-weight: bold;
-        display: block;
-        position: absolute;
-        top: 30%;
-        right: 0;
+        width: 55%;
+        margin: 0 auto;
       }
     }
   }
   .team {
-    text-align: left;
-    padding-left: 0.5rem;
-    &:first-of-type {
-      margin-bottom: 0.425rem;
-    }
+    padding: 0.1rem 0.5rem;
   }
 }
 
@@ -121,9 +119,3 @@ footer {
   }
 }
 
-@media screen and (max-width: 620px) {
-  .searchBox:hover > .searchInput {
-    width: 150px;
-    padding: 0 6px;
-  }
-}

@@ -1,9 +1,20 @@
 import React from 'react';
+import Flag from 'react-flags';
 import Box from '@material-ui/core/Box';
 import { getTime } from '../utils';
 
 const TableData = ({ match }) => {
-  const { date, league, homeTeam, awayTeam, odd, tip, score } = match;
+  const {
+    date,
+    countryCode,
+    league,
+    homeTeam,
+    awayTeam,
+    odd,
+    tip,
+    score,
+    outcome,
+  } = match;
   return (
     <tr>
       <td className="time">
@@ -22,8 +33,11 @@ const TableData = ({ match }) => {
         </Box>
       </td>
       <td>
-        <div className="team">{homeTeam}</div>
-        <div className="team">{awayTeam}</div>
+        <span>{countryCode}</span>
+      </td>
+      <td>
+        <span className="team">{homeTeam}</span> vs{' '}
+        <span className="team">{awayTeam}</span>
       </td>
       <td>
         <span>{league}</span>
@@ -36,6 +50,9 @@ const TableData = ({ match }) => {
       </td>
       <td>
         <span>{score}</span>
+      </td>
+      <td>
+        <span className={outcome === 'WON' ? "green" : "red"}>{outcome}</span>
       </td>
     </tr>
   );

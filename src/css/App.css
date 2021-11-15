@@ -109,7 +109,7 @@ aside {
 }
 
 main {
-  width: 60%;
+  width: 80%;
   margin: 0 auto;
   padding: 6.25rem 2rem;
 }
@@ -140,7 +140,6 @@ table thead th {
 }
 
 table thead th:nth-of-type(1) {
-  text-align: left;
   padding-left: 1rem;
 }
 
@@ -153,7 +152,14 @@ table tbody td {
 
 table tbody td span {
   display: inline-block;
-  margin: auto;
+}
+
+table tbody td .red {
+  background-color: red;
+}
+
+table tbody td .green {
+  background-color: green;
 }
 
 table tbody .time {
@@ -164,19 +170,12 @@ table tbody .time {
 table tbody .time div {
   font-size: 0.625rem;
   font-weight: bold;
-  display: block;
-  position: absolute;
-  top: 30%;
-  right: 0;
+  width: 55%;
+  margin: 0 auto;
 }
 
 table .team {
-  text-align: left;
-  padding-left: 0.5rem;
-}
-
-table .team:first-of-type {
-  margin-bottom: 0.425rem;
+  padding: 0.1rem 0.5rem;
 }
 
 footer {
@@ -225,12 +224,5 @@ footer .footer-nav .footer-list {
 footer .footer-nav .footer-list li {
   display: inline-block;
   margin-left: 1rem;
-}
-
-@media screen and (max-width: 620px) {
-  .searchBox:hover > .searchInput {
-    width: 150px;
-    padding: 0 6px;
-  }
 }
 /*# sourceMappingURL=App.css.map */

@@ -19,11 +19,9 @@
     "date-fns": "^2.25.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-flags": "^0.1.18",
     "react-redux": "^7.2.5",
     "react-router-dom": "^5.3.0",
     "react-scripts": "4.0.3",
-    "react-thunk": "^1.0.0",
     "react-toastify": "^8.0.3"
   },
   "scripts": {
@@ -46,5 +44,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "react-flags": "^0.1.18"
   }
 }
