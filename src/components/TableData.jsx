@@ -36,7 +36,8 @@ const TableData = ({ match }) => {
         <span>{countryCode}</span>
       </td>
       <td>
-        <span className="team">{homeTeam}</span> vs{' '}
+        <span className="team">{homeTeam}</span>
+        <span>vs</span>
         <span className="team">{awayTeam}</span>
       </td>
       <td>
