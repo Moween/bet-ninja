@@ -34,7 +34,6 @@ const DatePicker = () => {
           backgroundColor: '#612a11',
           marginLeft: '0.5rem',
         }}
-        href="/history"
         disabled={startDate && endDate ? false : true}
       >
         Filter

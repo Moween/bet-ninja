@@ -6,8 +6,10 @@ import SportsSoccerIcon from '@material-ui/icons/SportsSoccer';
 import { useStyles } from '../utils/muiStyles';
 import Navbar from './Navbar';
 import DatePicker from './DatePicker';
+import { useLocation } from 'react-router';
 
 const Header = () => {
+  const { pathname } = useLocation();
   const { brandLogo, logoContainer, soccerIcon } = useStyles();
   return (
     <Box component="header" className="header">
@@ -32,7 +34,7 @@ const Header = () => {
             </Typography>
           </Box>
           <Navbar />
-          <DatePicker />
+          {pathname === '/pages/history' ? <DatePicker /> : null}
         </Box>
       </Container>
     </Box>
