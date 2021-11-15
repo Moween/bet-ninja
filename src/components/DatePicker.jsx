@@ -18,11 +18,12 @@ const DatePicker = () => {
       dispatch(fetchWithDatePicker({ endDate, startDate }));
     }
   };
+  
 
   return (
     <Box sx={{ display: 'flex', alignItems: 'center', marginLeft: 'auto' }}>
       <Calendar label="Start" date={startDate} action={startDatePicked} />
-      <Calendar label="End" date={endDate} action={endDatePicked} />
+      <Calendar label="End" date={endDate} action={endDatePicked} minDate={startDate} />
       <Button
         id="filter_button"
         variant="contained"
