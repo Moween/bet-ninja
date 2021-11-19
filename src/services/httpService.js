@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 // Intercept errors with axios interceptors
 axios.interceptors.response.use(null, (error) => {
