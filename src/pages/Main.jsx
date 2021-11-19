@@ -35,7 +35,7 @@ const Home = () => {
     <main>
       <Container maxWidth="xl" className={container}>
         {renderContent()}
-        <ToastContainer />
+        <ToastContainer autoClose={false} />
       </Container>
     </main>
   );
