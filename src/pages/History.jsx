@@ -20,7 +20,7 @@ const History = () => {
   const handleChange = (event, value) => {
     setPage(value);
   };
-  
+
   useEffect(() => {
     if (soccerDataStatus === 'idle') {
       dispatch(fetchHistory()); // Dispatch action to fetchPastData
@@ -56,14 +56,16 @@ const History = () => {
   };
   return (
     <Box component="main">
-      <ToastContainer />
+      <ToastContainer autoClose={false} />
       <Box style={{ marginTop: '3rem' }}>{renderContent()}</Box>
-      {soccerData && <Pagination
-        items={Object.entries(groupMatchesByDate(soccerData, 'date'))}
-        page={page}
-        tablePerPage={tablePerPage}
-        handleChange={handleChange}
-      />}
+      {soccerData && (
+        <Pagination
+          items={Object.entries(groupMatchesByDate(soccerData, 'date'))}
+          page={page}
+          tablePerPage={tablePerPage}
+          handleChange={handleChange}
+        />
+      )}
     </Box>
   );
 };
