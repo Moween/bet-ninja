@@ -47,25 +47,28 @@ const History = () => {
         </Typography>
       );
     } else if (soccerDataStatus === 'succeeded') {
-      return Object.entries(groupMatchesByDate(soccerData, 'date'))
-        .slice((page - 1) * tablePerPage, page * tablePerPage)
-        .map(([key, soccerData]) => {
-          return <Table key={key} soccerData={soccerData} date={key} />;
-        });
+      return (
+        <>
+          {Object.entries(groupMatchesByDate(soccerData, 'date'))
+            .slice((page - 1) * tablePerPage, page * tablePerPage)
+            .map(([key, soccerData]) => {
+              return <Table key={key} soccerData={soccerData} date={key} />;
+            })(
+            <Pagination
+              items={Object.entries(groupMatchesByDate(soccerData, 'date'))}
+              page={page}
+              tablePerPage={tablePerPage}
+              handleChange={handleChange}
+            />
+          )}
+        </>
+      );
     }
   };
   return (
     <Box component="main">
       <ToastContainer autoClose={false} />
-      <Box style={{ marginTop: '3rem' }}>{renderContent()}</Box>
-      {soccerData && (
-        <Pagination
-          items={Object.entries(groupMatchesByDate(soccerData, 'date'))}
-          page={page}
-          tablePerPage={tablePerPage}
-          handleChange={handleChange}
-        />
-      )}
+      <Box sx={{ marginTop: '3rem' }}>{renderContent()}</Box>
     </Box>
   );
 };
