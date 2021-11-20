@@ -32,12 +32,12 @@ const Home = () => {
     }
   };
   return (
-    <main>
+    <Box component="main">
       <Container maxWidth="xl" className={container}>
         {renderContent()}
         <ToastContainer autoClose={false} />
       </Container>
-    </main>
+    </Box>
   );
 };
 
