@@ -57,15 +57,15 @@ const History = () => {
   return (
     <Box component="main">
       <ToastContainer autoClose={false} />
-      <Box style={{ marginTop: '3rem' }}>{renderContent()}</Box>
-      {soccerData && (
+      <Box sx={{ marginTop: '3rem' }}>{renderContent()}</Box>
+      {soccerDataStatus === 'succeeded' ? (
         <Pagination
           items={Object.entries(groupMatchesByDate(soccerData, 'date'))}
           page={page}
           tablePerPage={tablePerPage}
           handleChange={handleChange}
         />
-      )}
+      ) : null}
     </Box>
   );
 };
