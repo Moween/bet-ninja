@@ -16,18 +16,18 @@ const Header = () => {
       <Container maxWidth="false">
         <Box className="header__div">
           <Box className={logoContainer}>
-            <SportsSoccerIcon className={soccerIcon} fontSize="large" />
+            <SportsSoccerIcon className={soccerIcon} fontSize="medium" />
             <Typography
               className={brandLogo}
-              variant="h2"
+              variant="h3"
               component="h1"
-              sx={{ fontFamily: "'Lobster', cursive" }}
+              sx={{ fontFamily: "'Lobster', cursive", }}
             >
               Bet
               <Typography
-                variant="h2"
+                variant="h3"
                 component="span"
-                sx={{ color: '#612a11', fontFamily: "'Lobster', cursive"  }}
+                sx={{ color: '#0099FA', fontFamily: "'Lobster', cursive"  }}
               >
                 Ninja
               </Typography>

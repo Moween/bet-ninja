@@ -10,7 +10,8 @@ const PaginateData = ({ items, tablePerPage, page, handleChange }) => {
         [`& .MuiPagination-ul`]: {
          justifyContent: 'center',
          [`& .MuiPaginationItem-root.Mui-selected`]: {
-           backgroundColor: '#ccc'
+           backgroundColor: '#ccc',
+           color: '#031626'
          }
         },
       }}

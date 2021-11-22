@@ -22,7 +22,7 @@ const TableData = ({ match }) => {
           sx={{
             width: 'auto',
             height: 'auto',
-            bgcolor: '#612a11',
+            bgcolor: '#031626',
             borderRadius: '0.125rem',
             marginTop: 'auto',
             color: '#ccc',

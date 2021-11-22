@@ -17,7 +17,7 @@ export const theme = createTheme({
       xs: 0,
       sm: 375,
       md: 768,
-      lg: 1024,
+      lg: 992,
       xl: 1140,
     },
     unit: 'px',
@@ -38,9 +38,13 @@ export const theme = createTheme({
         root: {
           color: '#ccc',
           width: '9rem',
-          height: 'auto',
+          height: '2.5rem',
           marginLeft: '0.5rem',
+          padding: 0,
         },
+        input: {
+          height: '2rem',
+        }
       },
     },
     MuiFormLabel: {
@@ -48,8 +52,16 @@ export const theme = createTheme({
         root: {
           color: '#ccc',
           fontWeight: 'bold',
+          lineHeight: 1,
         },
       },
+    },
+    MuiInputLabel: {
+      styleOverrides: {
+        root: {
+          top: '-15%',
+        },
+      }
     },
     MuiOutlinedInput: {
       styleOverrides: {
@@ -67,15 +79,15 @@ export const theme = createTheme({
     },
     MuiButtonBase: {
       styleOverrides: {
-        backgroundColor: '#ccc',
+        backgroundColor: '#0099FA',
       },
     },
     MuiPaginationItem: {
       styleOverrides: {
         outlined: {
-          color: '#131917',
+          color: '#ccc',
           borderColor: '#5f6468',
-          backgroundColor: '#5f6468',
+          backgroundColor: '#031626',
           fontWeight: 'bold',
         },
       },
@@ -86,6 +98,8 @@ export const theme = createTheme({
 export const useStyles = makeStyles((theme) => ({
   // Header Styles
   brandLogo: {
+    [theme.breakpoints.down('md')]: {
+    },
     color: '#ccc',
     padding: 10,
     paddingLeft: 0,
@@ -95,7 +109,7 @@ export const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
   },
   soccerIcon: {
-    color: 'white',
+    color: '#ccc',
   },
   // TableData Styles
   loadingText: {
