@@ -31,8 +31,10 @@ const DatePicker = () => {
         sx={{
           height: 'auto',
           textTransform: 'capitalize',
-          backgroundColor: '#612a11',
+          backgroundColor: '#ccc',
+          color: '#031626',
           marginLeft: '0.5rem',
+          fontWeight: 'bold',
         }}
         disabled={startDate && endDate ? false : true}
       >
