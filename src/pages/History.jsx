@@ -68,8 +68,7 @@ const History = () => {
   return (
     <Box component="main">
       <ToastContainer autoClose={false} />
-      <Box sx={{ marginTop: '3rem' }}>{renderContent()}</Box>
-      
+      <Box sx={{ marginTop: '3rem' }}>{renderContent()}</Box>      
     </Box>
   );
 };
