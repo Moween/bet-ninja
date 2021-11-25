@@ -21,9 +21,9 @@ const DatePicker = () => {
 
   return (
     <Box sx={{ display: 'flex', alignItems: 'center', marginLeft: 'auto' }}>
-      <Calendar label="Start" date={startDate} action={startDatePicked} />
+      <Calendar label="From Date" date={startDate} action={startDatePicked} />
       <Calendar
-        label="End"
+        label="To Date"
         date={endDate}
         action={endDatePicked}
         minDate={startDate}
