@@ -1,5 +1,7 @@
 import React from 'react';
 import Flag from 'react-flags';
+import CheckIcon from '@material-ui/icons/Check';
+import CloseIcon from '@material-ui/icons/Close';
 import Box from '@material-ui/core/Box';
 import { getTime } from '../utils';
 
@@ -15,6 +17,17 @@ const TableData = ({ match }) => {
     score,
     outcome,
   } = match;
+
+  const showOutcomeIcon = () => {
+    if (outcome === 'WON') {
+      return <CheckIcon sx={{ color: '#0099FA' }} />;
+    } else if (!outcome) {
+      return null;
+    }
+
+    return <CloseIcon sx={{ color: '#E70008' }} />;
+  };
+
   return (
     <tr>
       <td className="time">
@@ -53,7 +66,7 @@ const TableData = ({ match }) => {
         <span>{score}</span>
       </td>
       <td>
-        <span className={outcome === 'WON' ? "green" : "red"}>{outcome}</span>
+        <span>{showOutcomeIcon()}</span>
       </td>
     </tr>
   );
