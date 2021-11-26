@@ -23,6 +23,9 @@ export const theme = createTheme({
     unit: 'px',
   },
   palette: {
+    primary: {
+      main: '#031626',
+    },
     secondary: {
       main: '#42b72a',
     },
@@ -100,6 +103,13 @@ export const theme = createTheme({
         root: {
           padding: '.1rem',
           borderRadius: 0,
+        },
+      },
+    },
+    MuiTab: {
+      styleOverrides: {
+        root: {
+         minHeight: 50
         },
       },
     },
