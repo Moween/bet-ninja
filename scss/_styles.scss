@@ -66,10 +66,17 @@ table {
       }
     }
     th {
-      padding: 1rem;
+      border-width: 2px;
+      border-style: solid;
+      border-color: $silver;
+      padding: 0.7rem;
       color: $black;
       &:nth-of-type(1) {
+        border-left-width: 0;
         padding-left: 1rem;
+      }
+      &:last-of-type {
+        border-right-width: 0;
       }
     }
   }
