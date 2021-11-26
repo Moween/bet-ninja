@@ -36,6 +36,21 @@ export const theme = createTheme({
         component: LinkBehavior,
       },
     },
+    MuiPaper: {
+      styleOverrides: {
+        root: {
+          backgroundColor: '#f1f1e6',
+        },
+      },
+    },
+    MuiPickersDay: {
+      styleOverrides: {
+        root: {
+          backgroundColor: '#f1f1e6',
+          color: 'inherit',
+        },
+      },
+    },
     MuiInputBase: {
       styleOverrides: {
         root: {
@@ -109,7 +124,7 @@ export const theme = createTheme({
     MuiTab: {
       styleOverrides: {
         root: {
-         minHeight: 50
+          minHeight: 50,
         },
       },
     },
