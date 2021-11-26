@@ -85,10 +85,36 @@ export const theme = createTheme({
     MuiPaginationItem: {
       styleOverrides: {
         outlined: {
-          color: '#ccc',
-          borderColor: '#5f6468',
+          color: '#fff',
+          borderColor: '#031626',
           backgroundColor: '#031626',
           fontWeight: 'bold',
+          '&:hover': {
+            color: '#031626',
+          },
+        },
+      },
+    },
+    MuiTabs: {
+      styleOverrides: {
+        root: {
+          padding: '.1rem',
+          borderRadius: 0,
+        },
+      },
+    },
+    MuiSelected: {
+      styleOverrides: {
+        root: {
+          color: '#FFF',
+        },
+      },
+    },
+    MuiTabIndicator: {
+      styleOverrides: {
+        root: {
+          color: '#FFF',
+          backgroundColor: '#FFF',
         },
       },
     },
