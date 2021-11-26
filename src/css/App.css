@@ -154,6 +154,15 @@ table thead th:last-of-type {
   border-right-width: 0;
 }
 
+table tbody .date {
+  background-color: #0099FA;
+  font-weight: bold;
+}
+
+table tbody .date th {
+  padding: 0.5rem;
+}
+
 table tbody td {
   text-align: center;
   padding: 0.5rem;

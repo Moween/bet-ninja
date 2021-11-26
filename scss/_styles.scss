@@ -81,6 +81,13 @@ table {
     }
   }
   tbody {
+    .date {
+      th {
+        padding: 0.5rem;
+      }
+      background-color: #0099FA;
+      font-weight: bold
+    }
     td {
       text-align: center;
       padding: 0.5rem;
