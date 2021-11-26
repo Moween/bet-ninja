@@ -18,7 +18,7 @@ body {
       width: 100%;
       text-align: center;
       a {
-        color: #ccc;
+        color: $silver;
         text-decoration: none;
         width: 20%;
         font-family: 1.5rem;
@@ -32,8 +32,8 @@ body {
   }
 
   #filter_button.Mui-disabled {
-    background-color: #ccc;
-    color: #fff;
+    background-color: #fff;
+    color: $darkBlue;
     opacity: 0.7;
     font-weight: bold;
   }
@@ -112,7 +112,7 @@ table {
 footer {
   width: 100%;
   background-color: $darkBlue;
-  color: #ccc;
+  color: $silver;
   .copyright-text {
     margin-top: 2rem;
     margin-left: 0.5rem;
