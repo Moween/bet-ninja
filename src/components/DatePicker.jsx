@@ -35,7 +35,7 @@ const DatePicker = () => {
         sx={{
           height: 'auto',
           textTransform: 'capitalize',
-          backgroundColor: '#ccc',
+          backgroundColor: '#0099FA',
           color: '#031626',
           marginLeft: '0.5rem',
           fontWeight: 'bold',
