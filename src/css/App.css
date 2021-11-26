@@ -100,19 +100,14 @@ body {
 }
 
 .header #filter_button.Mui-disabled {
-  background-color: #ccc;
-  color: #fff;
+  background-color: #fff;
+  color: #031626;
   opacity: 0.7;
   font-weight: bold;
 }
 
-aside {
-  margin-top: 6.25rem;
-  width: 20%;
-}
-
 main {
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
   padding: 6.25rem 2rem;
 }
@@ -127,7 +122,6 @@ table {
   border-collapse: collapse;
   width: 100%;
   font-size: 0.75rem;
-  margin-top: 2rem;
   table-layout: auto;
 }
 
@@ -144,12 +138,20 @@ table thead tr:nth-of-type(1) {
 }
 
 table thead th {
-  padding: 1rem;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #ccc;
+  padding: 0.7rem;
   color: black;
 }
 
 table thead th:nth-of-type(1) {
+  border-left-width: 0;
   padding-left: 1rem;
+}
+
+table thead th:last-of-type {
+  border-right-width: 0;
 }
 
 table tbody td {
