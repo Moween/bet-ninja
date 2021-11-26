@@ -5,6 +5,7 @@ import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import fetchHistory from '../actions/history';
 import Table from '../components/Table';
+import TableBody from '../components/TableBody';
 import { getDate } from '../utils/index';
 import { useStyles } from '../utils/muiStyles';
 import Pagination from '../components/Pagination';
@@ -42,19 +43,19 @@ const History = () => {
   const renderContent = () => {
     if (soccerDataStatus === 'loading') {
       return (
-        <Typography variant="body1" component="p" classes={loadingText}>
+        <Typography variant="body1" component="p" className={loadingText}>
           Loading...
         </Typography>
       );
     } else if (soccerDataStatus === 'succeeded') {
-      const tables = Object.entries(groupMatchesByDate(soccerData, 'date'))
+      const tableBody = Object.entries(groupMatchesByDate(soccerData, 'date'))
         .slice((page - 1) * tablePerPage, page * tablePerPage)
-        .map(([key, soccerData]) => {
-          return <Table key={key} soccerData={soccerData} date={key} />;
+        .map(([key, soccerData], index) => {
+          return <TableBody key={key} soccerData={soccerData} date={key} />;
         });
       return (
         <>
-          {tables}
+          <Table>{tableBody}</Table>
           <Pagination
             items={Object.entries(groupMatchesByDate(soccerData, 'date'))}
             page={page}
@@ -62,13 +63,13 @@ const History = () => {
             handleChange={handleChange}
           />
         </>
-      )
+      );
     }
   };
   return (
     <Box component="main">
       <ToastContainer autoClose={false} />
-      <Box sx={{ marginTop: '3rem' }}>{renderContent()}</Box>      
+      <Box sx={{ marginTop: '3rem' }}>{renderContent()}</Box>
     </Box>
   );
 };
