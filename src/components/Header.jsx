@@ -19,13 +19,13 @@ const Header = () => {
             <SportsSoccerIcon className={soccerIcon} fontSize="medium" />
             <Typography
               className={brandLogo}
-              variant="h3"
+              variant="h4"
               component="h1"
               sx={{ fontFamily: "'Lobster', cursive", }}
             >
               Echelon
               <Typography
-                variant="h3"
+                variant="h4"
                 component="span"
                 sx={{  fontFamily: "'Lobster', cursive"  }}
               >
