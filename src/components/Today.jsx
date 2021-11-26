@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import parseJSON from 'date-fns/parseJSON';
 import Box from '@material-ui/core/Box';
+import TableBody from './TableBody';
 import Table from './Table';
 import { getDate } from '../utils/index';
 
@@ -26,7 +27,9 @@ const Today = () => {
 
   return (
     <Box sx={{ overflowX: 'auto' }}>
-      <Table soccerData={todayMatches} date={todayDate} />
+      <Table>
+        <TableBody soccerData={todayMatches} date={todayDate} />
+      </Table>
     </Box>
   );
 };

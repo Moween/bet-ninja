@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Box from '@material-ui/core/Box';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
+import SortIcon from '@material-ui/icons/Sort';
 import { appleTabsStylesHook } from '@mui-treasury/styles/tabs';
 import Today from '../components/Today';
 import Yesterday from '../components/Yesterday';
@@ -13,37 +14,55 @@ const AppleTabs = () => {
   const tabItemStyles = appleTabsStylesHook.useTabItem();
 
   return (
-    <Box>
+    <Box sx={{ m: '1rem' }}>
       <Tabs
         classes={tabsStyles}
         value={tabIndex}
-        centered
         selectionFollowsFocus
-        sx={{ 
+        sx={{
           width: '100%',
-          boxShadow: '3px 3px 2px 1px rgba(0, 0, 0, 0.2)',
-          [`& .MuiTypography-root`]: {          
-            textTransform: 'capitalize',       
+          padding: 0,
+          backgroundColor: '#0099FA',
+          borderRadius: 0,
+          [`& .MuiTypography-root`]: {
             textDecoration: 'none',
           },
           [`& .MuiButtonBase-root`]: {
-            color: "#ccc", 
+            textTransform: 'capitalize',
+            padding: '0.1rem',
+            fontWeight: 'bold',
+            color: '#031626',
           },
           [`& .MuiTabs-indicator`]: {
-            color: '#5f6468',
-            backgroundColor:  '#5f6468',
+            color: '#FFF',
+            backgroundColor: '#FFF',
           },
-          [`& .Mui-selected`]: {
-            color: '#612a11', 
+          [`& .MuiTab-root.Mui-selected`]: {
+            color: '#FFF',
           },
-          
+          [`& .MuiTab-labelIcon`]: {
+            marginLeft: 'auto',
+            flexDirection: 'row-reverse',
+            alignItems: 'center',
+            justifyContent: 'space-evenly',
+          },
+          [`& .MuiSvgIcon-root`]: {
+            color: 'inherit'
+          }
         }}
         onChange={(e, index) => setTabIndex(index)}
         aria-label="Tabs"
       >
         <Tab classes={tabItemStyles} disableRipple label="Yesterday" />
         <Tab classes={tabItemStyles} disableRipple label="Today" />
-        <Tab classes={tabItemStyles} disableRipple label="Tomorrow"  />
+        <Tab classes={tabItemStyles} disableRipple label="Tomorrow" />
+        <Tab
+          classes={tabItemStyles}
+          icon={<SortIcon />}
+          disableRipple
+          aria-label="sort"
+          label="Sort"
+        />
       </Tabs>
       <TabPanel value={tabIndex} index={0}>
         <Yesterday />
@@ -60,15 +79,7 @@ const AppleTabs = () => {
 
 const TabPanel = (props) => {
   const { children, value, index } = props;
-  return (
-    <>
-      { value === index && (
-        <Box>
-          {children}
-        </Box>
-      )}
-    </>
-  );
-}
+  return <>{value === index && <Box>{children}</Box>}</>;
+};
 
 export default AppleTabs;

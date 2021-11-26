@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import parseJSON from 'date-fns/parseJSON';
 import subDays from 'date-fns/subDays';
 import Box from '@material-ui/core/Box';
+import TableBody from './TableBody';
 import Table from './Table';
 import { getDate } from '../utils/index';
 
@@ -26,7 +27,9 @@ const Yesterday = () => {
   }, []);
   return (
     <Box id="yesterday">
-      <Table soccerData={yesterdayMatches} date={yesterdayDate} />
+      <Table>
+        <TableBody soccerData={yesterdayMatches} date={yesterdayDate} />
+      </Table>
     </Box>
   );
 };

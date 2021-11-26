@@ -1,6 +1,7 @@
 $primaryColor: #0099FA;
 $darkBlue: #031626;
 $black: black;
+$silver: #ccc;
 
 @mixin flexItems($direction, $justify, $align) {
   display: flex;

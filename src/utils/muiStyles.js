@@ -23,6 +23,9 @@ export const theme = createTheme({
     unit: 'px',
   },
   palette: {
+    primary: {
+      main: '#031626',
+    },
     secondary: {
       main: '#42b72a',
     },
@@ -31,6 +34,21 @@ export const theme = createTheme({
     MuiLink: {
       defaultProps: {
         component: LinkBehavior,
+      },
+    },
+    MuiPaper: {
+      styleOverrides: {
+        root: {
+          backgroundColor: '#f1f1e6',
+        },
+      },
+    },
+    MuiPickersDay: {
+      styleOverrides: {
+        root: {
+          backgroundColor: '#f1f1e6',
+          color: 'inherit',
+        },
       },
     },
     MuiInputBase: {
@@ -44,7 +62,7 @@ export const theme = createTheme({
         },
         input: {
           height: '2rem',
-        }
+        },
       },
     },
     MuiFormLabel: {
@@ -61,7 +79,7 @@ export const theme = createTheme({
         root: {
           top: '-15%',
         },
-      }
+      },
     },
     MuiOutlinedInput: {
       styleOverrides: {
@@ -85,10 +103,43 @@ export const theme = createTheme({
     MuiPaginationItem: {
       styleOverrides: {
         outlined: {
-          color: '#ccc',
-          borderColor: '#5f6468',
+          color: '#fff',
+          borderColor: '#031626',
           backgroundColor: '#031626',
           fontWeight: 'bold',
+          '&:hover': {
+            color: '#031626',
+          },
+        },
+      },
+    },
+    MuiTabs: {
+      styleOverrides: {
+        root: {
+          padding: '.1rem',
+          borderRadius: 0,
+        },
+      },
+    },
+    MuiTab: {
+      styleOverrides: {
+        root: {
+          minHeight: 50,
+        },
+      },
+    },
+    MuiSelected: {
+      styleOverrides: {
+        root: {
+          color: '#FFF',
+        },
+      },
+    },
+    MuiTabIndicator: {
+      styleOverrides: {
+        root: {
+          color: '#FFF',
+          backgroundColor: '#FFF',
         },
       },
     },
@@ -98,8 +149,6 @@ export const theme = createTheme({
 export const useStyles = makeStyles((theme) => ({
   // Header Styles
   brandLogo: {
-    [theme.breakpoints.down('md')]: {
-    },
     color: '#ccc',
     padding: 10,
     paddingLeft: 0,
@@ -116,5 +165,4 @@ export const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
     marginTop: '0.5rem',
   },
-  
 }));

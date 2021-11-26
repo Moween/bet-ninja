@@ -18,7 +18,7 @@ body {
       width: 100%;
       text-align: center;
       a {
-        color: #ccc;
+        color: $silver;
         text-decoration: none;
         width: 20%;
         font-family: 1.5rem;
@@ -32,20 +32,14 @@ body {
   }
 
   #filter_button.Mui-disabled {
-    background-color: #ccc;
-    color: #fff;
+    background-color: #fff;
+    color: $darkBlue;
     opacity: 0.7;
     font-weight: bold;
   }
 }
-
-aside {
-  margin-top: 6.25rem;
-  width: 20%;
-}
-
 main {
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
   padding: 6.25rem 2rem;
   .loadingText {
@@ -59,7 +53,7 @@ table {
   border-collapse: collapse;
   width: 100%;
   font-size: 0.75rem;
-  margin-top: 2rem;
+  // margin-top: 1rem;
   table-layout: auto;
   tr:nth-child(even) {
     background-color: #dddddd;
@@ -72,14 +66,28 @@ table {
       }
     }
     th {
-      padding: 1rem;
+      border-width: 2px;
+      border-style: solid;
+      border-color: $silver;
+      padding: 0.7rem;
       color: $black;
       &:nth-of-type(1) {
+        border-left-width: 0;
         padding-left: 1rem;
+      }
+      &:last-of-type {
+        border-right-width: 0;
       }
     }
   }
   tbody {
+    .date {
+      th {
+        padding: 0.5rem;
+      }
+      background-color: #0099FA;
+      font-weight: bold
+    }
     td {
       text-align: center;
       padding: 0.5rem;
@@ -112,7 +120,7 @@ table {
 footer {
   width: 100%;
   background-color: $darkBlue;
-  color: #ccc;
+  color: $silver;
   .copyright-text {
     margin-top: 2rem;
     margin-left: 0.5rem;

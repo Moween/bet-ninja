@@ -25,7 +25,7 @@ const Home = () => {
       return <Typography component="p" className="loadingText">Loading...</Typography>;
     } else if (soccerDataStatus === 'succeeded') {
       return (
-        <Box>          
+        <Box>
           <Tabs />
         </Box>
       );

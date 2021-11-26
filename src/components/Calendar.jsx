@@ -20,13 +20,11 @@ const Calendar = ({ label, date, action, minDate }) => {
         disableFuture
         clearable
         cancelLabel
-        readOnly={label === 'End' && !minDate ? true : false}
+        readOnly={label === 'To Date' && !minDate ? true : false}
         okLabel
         onChange={handleChange}
-        minDate={label === 'End' ? addDays(minDate, 1) : null }
-        renderInput={(params) => (
-          <TextField {...params} />
-        )}
+        minDate={label === 'To Date' ? addDays(minDate, 1) : null}
+        renderInput={(params) => <TextField {...params} />}
       />
     </LocalizationProvider>
   );
