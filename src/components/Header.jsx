@@ -23,13 +23,13 @@ const Header = () => {
               component="h1"
               sx={{ fontFamily: "'Lobster', cursive", }}
             >
-              Bet
+              Echelon
               <Typography
                 variant="h3"
                 component="span"
-                sx={{ color: '#0099FA', fontFamily: "'Lobster', cursive"  }}
+                sx={{  fontFamily: "'Lobster', cursive"  }}
               >
-                Ninja
+                BetTips
               </Typography>
             </Typography>
           </Box>
