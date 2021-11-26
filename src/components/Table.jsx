@@ -1,16 +1,10 @@
 import React from 'react';
-import TableData from './TableData';
+import Box from '@material-ui/core/Box';
 
-const Table = ({ soccerData, date }) => {
+const Table = (props) => {
   return (
-    <table>
-      <colgroup>
-        <col span="2" />
-      </colgroup>
+    <Box component="table">
       <thead>
-        <tr>
-          <th colSpan="8">{date}</th>
-        </tr>
         <tr>
           <th>Time</th>
           <th>Country</th>
@@ -19,15 +13,12 @@ const Table = ({ soccerData, date }) => {
           <th>Odd</th>
           <th>Tip</th>
           <th>Score</th>
+          <th>Result</th>
           <th>Outcome</th>
         </tr>
       </thead>
-      <tbody>
-        {soccerData.map((match) => (
-          <TableData key={match.fid} match={match} />
-        ))}
-      </tbody>
-    </table>
+      {props.children}
+    </Box>
   );
 };
 
