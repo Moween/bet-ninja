@@ -62,6 +62,7 @@ export const theme = createTheme({
         },
         input: {
           height: '2rem',
+          fontSize: '0.875rem',
         },
       },
     },
@@ -71,13 +72,15 @@ export const theme = createTheme({
           color: '#ccc',
           fontWeight: 'bold',
           lineHeight: 1,
+          fontSize: '0.875rem',
         },
       },
     },
     MuiInputLabel: {
       styleOverrides: {
         root: {
-          top: '-15%',
+          top: '-5%',
+          left: '4%'
         },
       },
     },

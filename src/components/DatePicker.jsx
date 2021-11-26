@@ -20,7 +20,7 @@ const DatePicker = () => {
   };
 
   return (
-    <Box sx={{ display: 'flex', alignItems: 'center', marginLeft: 'auto' }}>
+    <Box sx={{ display: 'flex', alignItems: 'center', marginLeft: 'auto', padding: '1rem 0' }}>
       <Calendar label="From Date" date={startDate} action={startDatePicked} />
       <Calendar
         label="To Date"
