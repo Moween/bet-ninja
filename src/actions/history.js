@@ -3,7 +3,8 @@ import httpService from '../services/httpService';
 import { subDays, lightFormat } from 'date-fns';
 
 async function fetchPastMatches() {
-  const pastThirtyDays = lightFormat(subDays(new Date(), 30), 'yyyy-MM-dd'); // Get yesterday date in the format YYYY-MM-DD
+  const pastThirtyDays = lightFormat(subDays(new Date(), 30), 'yyyy-MM-dd'); 
+  // Get yesterday date in the format YYYY-MM-DD
   const aDayBeforeCurrent = lightFormat(subDays(new Date(), 1), 'yyyy-MM-dd');
   const response = await httpService(pastThirtyDays, aDayBeforeCurrent);
   return response.data;

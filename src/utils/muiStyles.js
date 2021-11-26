@@ -44,7 +44,7 @@ export const theme = createTheme({
         },
         input: {
           height: '2rem',
-        }
+        },
       },
     },
     MuiFormLabel: {
@@ -61,7 +61,7 @@ export const theme = createTheme({
         root: {
           top: '-15%',
         },
-      }
+      },
     },
     MuiOutlinedInput: {
       styleOverrides: {
@@ -124,8 +124,6 @@ export const theme = createTheme({
 export const useStyles = makeStyles((theme) => ({
   // Header Styles
   brandLogo: {
-    [theme.breakpoints.down('md')]: {
-    },
     color: '#ccc',
     padding: 10,
     paddingLeft: 0,
@@ -142,5 +140,4 @@ export const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
     marginTop: '0.5rem',
   },
-  
 }));
