@@ -2,21 +2,21 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
+import lightFormat from 'date-fns/lightFormat';
 
 import Calendar from './Calendar';
-import { startDatePicked, endDatePicked } from '../reducers/dateSlice';
-import fetchWithDatePicker from '../actions/datePicker';
+import { startDatePicked, endDatePicked } from '../reducers/historySlice';
+import fetchHistory from '../actions/history';
 
 const DatePicker = () => {
-  const startDate = useSelector((state) => state.date.startDate);
-  const endDate = useSelector((state) => state.date.endDate);
-  const soccerDataStatus = useSelector((state) => state.date.status);
+  let startDate = useSelector((state) => state.pastMatchesData.startDate);
+  let endDate = useSelector((state) => state.pastMatchesData.endDate);
   const dispatch = useDispatch();
-
+  
   const handleClick = () => {
-    if (soccerDataStatus === 'idle') {
-      dispatch(fetchWithDatePicker({ endDate, startDate }));
-    }
+    startDate = lightFormat(startDate, 'yyyy-MM-dd');
+    endDate = lightFormat(endDate, 'yyyy-MM-dd');
+    dispatch(fetchHistory({ startDate, endDate }));
   };
 
   return (
@@ -39,6 +39,9 @@ const DatePicker = () => {
           color: '#031626',
           marginLeft: '0.5rem',
           fontWeight: 'bold',
+          '&:hover': {
+            backgroundColor: '#fff'
+          }
         }}
         disabled={startDate && endDate ? false : true}
       >
