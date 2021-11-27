@@ -1,29 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import { useSelector } from 'react-redux';
-import parseJSON from 'date-fns/parseJSON';
+import React from 'react';
 import Box from '@material-ui/core/Box';
 import TableBody from './TableBody';
 import Table from './Table';
 import { getDate } from '../utils/index';
+import useFilterMatches from '../utils/useFilterMatches';
 
 const Today = () => {
   let todayDate = getDate(new Date());
-  const [todayMatches, setTodayMatches] = useState([]);
-  const soccerData = useSelector((state) => state.soccerData.soccerData);
-
-  const filterTodayMatches = () => {
-    // Filter out matches with today's date
-    return soccerData.filter((match) => {
-      const date = getDate(parseJSON(match.date));
-      return date === todayDate;
-    });
-  };
-
-  useEffect(() => {
-    const todayMatches = filterTodayMatches;
-    setTodayMatches(todayMatches);
-    // eslint-disable-next-line
-  }, []);
+  const todayMatches = useFilterMatches(todayDate);
 
   return (
     <Box sx={{ overflowX: 'auto' }}>
