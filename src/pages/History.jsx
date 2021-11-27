@@ -8,7 +8,9 @@ import Table from '../components/Table';
 import TableBody from '../components/TableBody';
 import { getDate } from '../utils/index';
 import { useStyles } from '../utils/muiStyles';
+
 import Pagination from '../components/Pagination';
+import { subDays, lightFormat } from 'date-fns';
 
 const History = () => {
   const { loadingText } = useStyles();
@@ -17,16 +19,20 @@ const History = () => {
   const soccerData = useSelector((state) => state.pastMatchesData.soccerData);
   const soccerDataStatus = useSelector((state) => state.pastMatchesData.status);
   const dispatch = useDispatch();
-
+  
   const handleChange = (event, value) => {
     setPage(value);
   };
-
+  
   useEffect(() => {
     if (soccerDataStatus === 'idle') {
-      dispatch(fetchHistory()); // Dispatch action to fetchPastData
+      const startDate = lightFormat(subDays(new Date(), 30), 'yyyy-MM-dd');
+      // Get yesterday date in the format YYYY-MM-DD
+      const endDate = lightFormat(subDays(new Date(), 1), 'yyyy-MM-dd');
+      dispatch(fetchHistory({ startDate, endDate })); // Dispatch action to fetchPastData
     }
-  }, [soccerDataStatus, dispatch]);
+    // eslint-disable-next-line
+  }, []);
 
   // Group the history result by date
   const groupMatchesByDate = (soccerData, key) => {

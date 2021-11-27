@@ -1,13 +1,22 @@
-import { createSlice } from "@reduxjs/toolkit";
-import fetchHistory from "../actions/history";
+import { createSlice } from '@reduxjs/toolkit';
+import fetchHistory from '../actions/history';
 
 const historySlice = createSlice({
-  name: 'historySoccerData',
+  name: 'pastMatchesData',
   initialState: {
+    startDate: null,
+    endDate: null,
     status: 'idle',
     soccerData: [],
   },
-  reducers: {},
+  reducers: {
+    startDatePicked: (state, action) => {
+      state.startDate = action.payload;
+    },
+    endDatePicked: (state, action) => {
+      state.endDate = action.payload;
+    },
+  },
   extraReducers(builder) {
     builder
       .addCase(fetchHistory.pending, (state) => {
@@ -15,8 +24,7 @@ const historySlice = createSlice({
       })
       .addCase(fetchHistory.fulfilled, (state, action) => {
         state.status = 'succeeded';
-        // Adds any fetched data to the array using immer lib
-        state.soccerData = state.soccerData.concat(action.payload);
+        state.soccerData = [].concat(action.payload);
       })
       .addCase(fetchHistory.rejected, (state) => {
         state.status = 'failed';
@@ -25,5 +33,5 @@ const historySlice = createSlice({
   },
 });
 
-export const { fetchDataStored } = historySlice.actions;
+export const { startDatePicked, endDatePicked } = historySlice.actions;
 export default historySlice.reducer;
