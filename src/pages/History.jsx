@@ -3,14 +3,13 @@ import { useSelector, useDispatch } from 'react-redux';
 import { ToastContainer } from 'react-toastify';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
+
+import { useStyles } from '../utils/muiStyles';
 import fetchHistory from '../actions/history';
 import Table from '../components/Table';
 import TableBody from '../components/TableBody';
-import { getDate } from '../utils/index';
-import { useStyles } from '../utils/muiStyles';
-
+import { getDate, getPastDates } from '../utils/index';
 import Pagination from '../components/Pagination';
-import { subDays, lightFormat } from 'date-fns';
 
 const History = () => {
   const { loadingText } = useStyles();
@@ -26,9 +25,9 @@ const History = () => {
   
   useEffect(() => {
     if (soccerDataStatus === 'idle') {
-      const startDate = lightFormat(subDays(new Date(), 30), 'yyyy-MM-dd');
+      const startDate = getPastDates(30);
       // Get yesterday date in the format YYYY-MM-DD
-      const endDate = lightFormat(subDays(new Date(), 1), 'yyyy-MM-dd');
+      const endDate = getPastDates(1);
       dispatch(fetchHistory({ startDate, endDate })); // Dispatch action to fetchPastData
     }
     // eslint-disable-next-line
