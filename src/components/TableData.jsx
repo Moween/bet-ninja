@@ -3,8 +3,12 @@ import CheckIcon from '@material-ui/icons/Check';
 import CloseIcon from '@material-ui/icons/Close';
 import Box from '@material-ui/core/Box';
 import { getTime } from '../utils';
+import { useMediaQuery } from '@mui/material';
+import { theme as useTheme } from '../utils/muiStyles';
 
 const TableData = ({ match }) => {
+  const theme = useTheme;
+  const medium = useMediaQuery(theme.breakpoints.between('md', 'lg'));
   const {
     date,
     countryCode,
@@ -45,10 +49,12 @@ const TableData = ({ match }) => {
             {getTime(date)}
           </Box>
         </td>
-        <td>
-          <span>{countryCode}</span>
-        </td>
-        <td>
+        {!medium ? (
+          <td>
+            <span>{countryCode}</span>
+          </td>
+        ) : null}
+        <td className={ medium ? 'md-sc' : null}>
           <span className="team">{homeTeam}</span>
           <span>vs</span>
           <span className="team">{awayTeam}</span>
@@ -65,9 +71,13 @@ const TableData = ({ match }) => {
         <td>
           <span>{score}</span>
         </td>
-        <td>
-          <span>{outcome && outcome.slice(0, 1) + outcome.slice(1).toLowerCase()}</span>
-        </td>
+        {!medium ? (
+          <td>
+            <span>
+              {outcome && outcome.slice(0, 1) + outcome.slice(1).toLowerCase()}
+            </span>
+          </td>
+        ) : null}
         <td>
           <span>{showOutcomeIcon()}</span>
         </td>

@@ -8,11 +8,11 @@ import Calendar from './Calendar';
 import { startDatePicked, endDatePicked } from '../reducers/historySlice';
 import fetchHistory from '../actions/history';
 
-const DatePicker = () => {
+const DatePicker = ({ smallAndTabScreen }) => {
   let startDate = useSelector((state) => state.pastMatchesData.startDate);
   let endDate = useSelector((state) => state.pastMatchesData.endDate);
   const dispatch = useDispatch();
-  
+
   const handleClick = () => {
     startDate = lightFormat(startDate, 'yyyy-MM-dd');
     endDate = lightFormat(endDate, 'yyyy-MM-dd');
@@ -20,7 +20,7 @@ const DatePicker = () => {
   };
 
   return (
-    <Box sx={{ display: 'flex', alignItems: 'center', marginLeft: 'auto', padding: '1rem 0' }}>
+    <Box sx={{ marginLeft: 'auto', padding: '1rem 0' }}>
       <Calendar label="From Date" date={startDate} action={startDatePicked} />
       <Calendar
         label="To Date"
@@ -33,15 +33,17 @@ const DatePicker = () => {
         variant="contained"
         onClick={handleClick}
         sx={{
+          display: smallAndTabScreen ? 'block' : 'inline',
           height: 'auto',
           textTransform: 'capitalize',
           backgroundColor: '#0099FA',
           color: '#031626',
           marginLeft: '0.5rem',
+          marginTop: smallAndTabScreen ? '0.5rem' : 0,
           fontWeight: 'bold',
           '&:hover': {
-            backgroundColor: '#fff'
-          }
+            backgroundColor: '#fff',
+          },
         }}
         disabled={startDate && endDate ? false : true}
       >

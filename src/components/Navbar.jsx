@@ -12,16 +12,18 @@ const navLinks = [
   },
 ];
 
-const Navbar = () => {
-  return ( 
-    <nav className="nav">
-      <ul className="nav_list">
+const Navbar = ({ smallAndTabScreen }) => {
+  return (
+    <nav className={smallAndTabScreen ? 'side-nav' : 'nav'}>
+      <ul className={smallAndTabScreen ? 'side-nav-list' : 'nav_list'}>
         {navLinks.map((navLink) => (
-          <Link href={navLink.path} key={navLink.name}>{navLink.name}</Link>
+          <Link href={navLink.path} key={navLink.name}>
+            {navLink.name}
+          </Link>
         ))}
       </ul>
     </nav>
   );
-}
- 
+};
+
 export default Navbar;
