@@ -19,7 +19,7 @@ const Header = () => {
 
   return (
     <Box component="header" className="header">
-      <Container maxWidth="false">
+      <Container maxWidth="xl">
         <Box
           className={mobile || tablet ? 'header__div__sm' : 'header__div__lg'}
           sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}

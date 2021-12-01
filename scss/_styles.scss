@@ -150,18 +150,20 @@ footer {
   width: 100%;
   background-color: $darkBlue;
   color: $silver;
-  .copyright-text {
-    margin-top: 2rem;
-    margin-left: 0.5rem;
-    padding-left: 1rem;
-  }
-  .footer-nav {
-    width: 45%;
-    .footer-list {
-      @include flexItems(column, flex-start, center);
-      li {
-        display: inline-block;
-        margin-left: 1rem;
+  .footer__div {
+    .copyright-text {
+      margin-top: 2rem;
+      margin-left: 0.5rem;
+      padding-left: 1rem;
+    }
+    .footer-nav {
+      width: 45%;
+      .footer-list {
+        @include flexItems(column, flex-start, center);
+        li {
+          display: inline-block;
+          margin-left: 1rem;
+        }
       }
     }
   }
@@ -180,17 +182,19 @@ footer {
   footer {
     width: 100%;
     height: 8vh;
-    @include flexItems(row, space-between, center);
-    .copyright-text {
-      margin-top: 0;
-      margin-left: 2rem;
-      padding-left: 0rem;
-    }
-    .footer-nav {
-      width: 50%;
-      .footer-list {
-        padding: 0;
-        @include flexItems(row, center, center);
+    .footer__div {
+      @include flexItems(row, space-between, center);
+      .copyright-text {
+        margin-top: 0;
+        margin-left: 2rem;
+        padding-left: 0rem;
+      }
+      .footer-nav {
+        width: 50%;
+        .footer-list {
+          padding: 0;
+          @include flexItems(row, center, center);
+        }
       }
     }
   }
