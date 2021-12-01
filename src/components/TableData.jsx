@@ -1,8 +1,6 @@
 import React from 'react';
-import CheckIcon from '@material-ui/icons/Check';
-import CloseIcon from '@material-ui/icons/Close';
 import Box from '@material-ui/core/Box';
-import { getTime } from '../utils';
+import showOutcomeIcon, { getTime } from '../utils';
 import { useSelector } from 'react-redux';
 
 const TableData = ({ match }) => {
@@ -20,15 +18,7 @@ const TableData = ({ match }) => {
     outcome,
   } = match;
 
-  const showOutcomeIcon = () => {
-    if (outcome === 'WON') {
-      return <CheckIcon sx={{ color: '#0099FA' }} />;
-    } else if (!outcome) {
-      return null;
-    }
-
-    return <CloseIcon sx={{ color: '#E70008' }} />;
-  };
+  
 
   return (
     <>
@@ -78,7 +68,7 @@ const TableData = ({ match }) => {
           </td>
         ) : null}
         <td>
-          <span>{showOutcomeIcon()}</span>
+          <span>{showOutcomeIcon(outcome)}</span>
         </td>
       </tr>
     </>
