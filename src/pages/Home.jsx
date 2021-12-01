@@ -23,11 +23,7 @@ const Home = () => {
     if (soccerDataStatus === 'loading') {
       return <Typography component="p" className="loadingText">Loading...</Typography>;
     } else if (soccerDataStatus === 'succeeded') {
-      return (
-        <Box>
-          <Tabs />
-        </Box>
-      );
+      return <Tabs />;
     }
   };
   return (
