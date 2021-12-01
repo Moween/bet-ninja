@@ -11,17 +11,6 @@ const LinkBehavior = forwardRef((props, ref) => {
 });
 
 export const theme = createTheme({
-  breakpoints: {
-    // Media Query Breakpoint
-    values: {
-      xs: 0,
-      sm: 375,
-      md: 768,
-      lg: 992,
-      xl: 1140,
-    },
-    unit: 'px',
-  },
   palette: {
     primary: {
       main: '#031626',
