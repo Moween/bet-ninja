@@ -10,7 +10,6 @@ import { useStyles } from '../utils/muiStyles';
 import Tabs from '../components/Tabs';
 
 const Home = () => {
-  const { container } = useStyles();
   const dispatch = useDispatch();
   const soccerDataStatus = useSelector((state) => state.soccerData.status);
 
@@ -33,7 +32,7 @@ const Home = () => {
   };
   return (
     <Box component="main">
-      <Container maxWidth="xl" className={container}>
+      <Container maxWidth="xl">
         {renderContent()}
         <ToastContainer autoClose={false} />
       </Container>
