@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import Link from '@mui/material/Link';
 
 const navLinks = [
@@ -12,10 +13,12 @@ const navLinks = [
   },
 ];
 
-const Navbar = ({ smallAndTabScreen }) => {
+const Navbar = () => {
+  const mobile = useSelector((state) => state.mediaQuery.mobile);
+  const tablet = useSelector((state) => state.mediaQuery.tablet);
   return (
-    <nav className={smallAndTabScreen ? 'side-nav' : 'nav'}>
-      <ul className={smallAndTabScreen ? 'side-nav-list' : 'nav_list'}>
+    <nav className={mobile || tablet ? 'side-nav' : 'nav'}>
+      <ul className={mobile || tablet ? 'side-nav-list' : 'nav_list'}>
         {navLinks.map((navLink) => (
           <Link href={navLink.path} key={navLink.name}>
             {navLink.name}

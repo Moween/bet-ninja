@@ -36,11 +36,13 @@ const Header = () => {
             </Typography>
           </Box>
           {mobile || tablet ? (
-            <Drawer pathName={pathname} smallAndTabScreen={mobile || tablet} />
+            <Drawer pathName={pathname} />
           ) : (
             <>
-              <Navbar smallAndTabScreen={mobile || tablet} />
-              {pathname === '/pages/history' ? <DatePicker /> : null}
+              <Navbar />
+              {pathname === '/pages/history' ? (
+                <DatePicker smallAndTabScreen={mobile || tablet} />
+              ) : null}
             </>
           )}
         </Box>
