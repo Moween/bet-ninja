@@ -6,7 +6,6 @@ import Typography from '@material-ui/core/Typography';
 import { ToastContainer } from 'react-toastify'; // To display network errors
 import 'react-toastify/dist/ReactToastify.css';
 import fetchSoccerData from '../actions/soccerData';
-import { useStyles } from '../utils/muiStyles';
 import Tabs from '../components/Tabs';
 
 const Home = () => {
