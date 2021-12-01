@@ -51,6 +51,7 @@ body {
       text-decoration: none;
       font-weight: 500;
       padding: 1rem;
+      color: $silver
     }
   }
 }
@@ -190,6 +191,14 @@ footer {
       color: $darkBlue;
     }
   }
+
+  .side-nav {
+    &-list {
+      a {      
+        color: $darkBlue;
+      }
+    } 
+  } 
 
   main {
     padding: 5rem 0;

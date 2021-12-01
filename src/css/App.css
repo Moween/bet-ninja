@@ -147,6 +147,7 @@ body {
   text-decoration: none;
   font-weight: 500;
   padding: 1rem;
+  color: #ccc;
 }
 
 main {
@@ -329,6 +330,9 @@ footer .footer__div .footer-nav .footer-list li {
   }
   header #filter_button.Mui-disabled {
     background-color: #fff;
+    color: #031626;
+  }
+  .side-nav-list a {
     color: #031626;
   }
   main {
