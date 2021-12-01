@@ -6,7 +6,7 @@ import { theme } from '../utils/muiStyles';
 import { useMediaQuery } from '@material-ui/core';
 
 import Header from './Header';
-import Home from '../pages/Main';
+import Home from '../pages/Home';
 import History from '../pages/History';
 import Footer from './Footer';
 import '../css/App.css';
@@ -14,8 +14,8 @@ import { setSmallScreen, setMediumScreen } from '../reducers/mediaQuery';
 
 function App() {
   const dispatch = useDispatch();
-  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
-  const isTablet = useMediaQuery(theme.breakpoints.down('lg'));
+  const isMobile = useMediaQuery(theme.breakpoints.down(768));
+  const isTablet = useMediaQuery(theme.breakpoints.between(768, 1024));
 
   dispatch(setMediumScreen(isTablet));
   dispatch(setSmallScreen(isMobile));
