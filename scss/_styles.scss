@@ -58,7 +58,8 @@ body {
 main {
   padding: 2.1875rem 0;
   .loadingText {
-    margin-top: 0.5rem;
+    margin-top: 1rem;
+    padding-top: 3rem;
     text-align: center;
   }
 }
@@ -146,7 +147,7 @@ table {
 
 footer {
   width: 100%;
-  background-color: $darkSlate;
+  background-color: $darkSlateGray;
   color: $silver;
   .footer__div {
     .copyright-text {
