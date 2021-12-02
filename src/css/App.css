@@ -113,11 +113,11 @@ body {
 }
 
 .header .nav_list a:hover {
-  color: #fff;
+  color: #ccc;
 }
 
 .header #filter_button.Mui-disabled {
-  background-color: #fff;
+  background-color: #ccc;
   color: #031626;
   opacity: 0.7;
   font-weight: bold;
@@ -327,10 +327,10 @@ footer .footer__div .footer-nav .footer-list li {
     color: #ccc;
   }
   header .nav_list a:hover {
-    color: #fff;
+    color: #ccc;
   }
   header #filter_button.Mui-disabled {
-    background-color: #fff;
+    background-color: #ccc;
     color: #031626;
   }
   .side-nav-list a {

@@ -39,11 +39,11 @@ const AppleTabs = () => {
             color: '#031626',
           },
           [`& .MuiTabs-indicator`]: {
-            color: '#FFF',
-            backgroundColor: mobile ? '#0099FA' : '#FFF',
+            color: '#ccc',
+            backgroundColor: mobile ? '#0099FA' : '#ccc',
           },
           [`& .MuiTab-root.Mui-selected`]: {
-            color: mobile ? '#0099FA' : '#FFF',
+            color: mobile ? '#0099FA' : '#ccc',
           },
           [`& .MuiTab-labelIcon`]: {
             marginLeft: 'auto',
