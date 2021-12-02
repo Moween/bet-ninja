@@ -124,7 +124,7 @@ body {
 }
 
 .side-nav {
-  margin-top: 7rem;
+  margin-top: 4rem;
 }
 
 .side-nav-list {
@@ -155,6 +155,7 @@ main {
 }
 
 main .loadingText {
+  color: #ccc;
   margin-top: 1rem;
   padding-top: 3rem;
   text-align: center;
@@ -339,6 +340,9 @@ footer .footer__div .footer-nav .footer-list li {
     padding: 5rem 0;
     width: 90%;
     margin: 0 auto;
+  }
+  main .loadingText {
+    color: #031626;
   }
   table tr:nth-child(even) {
     background-color: #dddddd;
