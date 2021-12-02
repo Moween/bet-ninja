@@ -3,7 +3,7 @@ import Box from '@material-ui/core/Box';
 import { useSelector } from 'react-redux';
 
 const Table = (props) => {
-    const tablet = useSelector(state => state.mediaQuery.tablet);
+  const tablet = useSelector(state => state.mediaQuery.tablet);
   return (
     <Box component="table">
       <thead>
