@@ -1,16 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
 import Divider from '@material-ui/core/Divider';
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
 import MenuIcon from '@material-ui/icons/Menu';
+import { useSelector } from 'react-redux';
 
 import Navbar from './Navbar';
 import DatePicker from './DatePicker';
 
-const TemporaryDrawer = ({ pathName, smallAndTabScreen }) => {
-  const [state, setState] = React.useState(false);
-  console.log(state);
+const TemporaryDrawer = ({ pathName }) => {
+  const [state, setState] = useState(false);
+  const mobile = useSelector((state) => state.mediaQuery.mobile);
+  const tablet = useSelector((state) => state.mediaQuery.tablet);
 
   const toggleDrawer = (event) => {
     if (
@@ -34,7 +36,8 @@ const TemporaryDrawer = ({ pathName, smallAndTabScreen }) => {
         onOpen={toggleDrawer}
         sx={{
           [`& .MuiDrawer-paper`]: {
-            backgroundColor: '#F1F1E6',
+            backgroundColor: mobile ? '#031626' : '#F1F1E6',
+            color: '#ccc',
             boxSizing: 'border-box',
           },
         }}
@@ -42,13 +45,13 @@ const TemporaryDrawer = ({ pathName, smallAndTabScreen }) => {
           keepMounted: true,
         }}
       >
-        <Box sx={{ width: 240 }} role="side-nav">
+        <Box sx={{ width: mobile ? 180 : 240 }} role="side-nav">
           <Divider />
-          <Navbar smallAndTabScreen={smallAndTabScreen} />
+          <Navbar />
           {pathName === '/pages/history' ? (
             <>
               <Divider />
-              <DatePicker smallAndTabScreen={smallAndTabScreen} />
+              <DatePicker smallAndTabScreen={mobile || tablet} />
             </>
           ) : null}
         </Box>

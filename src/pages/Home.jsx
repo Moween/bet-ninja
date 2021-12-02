@@ -6,11 +6,9 @@ import Typography from '@material-ui/core/Typography';
 import { ToastContainer } from 'react-toastify'; // To display network errors
 import 'react-toastify/dist/ReactToastify.css';
 import fetchSoccerData from '../actions/soccerData';
-import { useStyles } from '../utils/muiStyles';
 import Tabs from '../components/Tabs';
 
 const Home = () => {
-  const { container } = useStyles();
   const dispatch = useDispatch();
   const soccerDataStatus = useSelector((state) => state.soccerData.status);
 
@@ -24,16 +22,12 @@ const Home = () => {
     if (soccerDataStatus === 'loading') {
       return <Typography component="p" className="loadingText">Loading...</Typography>;
     } else if (soccerDataStatus === 'succeeded') {
-      return (
-        <Box>
-          <Tabs />
-        </Box>
-      );
+      return <Tabs />;
     }
   };
   return (
     <Box component="main">
-      <Container maxWidth="xl" className={container}>
+      <Container maxWidth="xl">
         {renderContent()}
         <ToastContainer autoClose={false} />
       </Container>

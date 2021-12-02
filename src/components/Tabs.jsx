@@ -4,12 +4,15 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import SortIcon from '@material-ui/icons/Sort';
 import { appleTabsStylesHook } from '@mui-treasury/styles/tabs';
+import { useSelector } from 'react-redux';
+
 import Today from '../components/Today';
 import Yesterday from '../components/Yesterday';
 import Tomorrow from '../components/Tomorrow';
 
 const AppleTabs = () => {
   const [tabIndex, setTabIndex] = useState(1);
+  const mobile = useSelector((state) => state.mediaQuery.mobile);
   const tabsStyles = appleTabsStylesHook.useTabs();
   const tabItemStyles = appleTabsStylesHook.useTabItem();
 
@@ -20,25 +23,27 @@ const AppleTabs = () => {
         value={tabIndex}
         selectionFollowsFocus
         sx={{
-          width: '100%',
           padding: 0,
-          backgroundColor: '#0099FA',
+          backgroundColor: mobile ? '#ccc' : '#0099FA',
+          ml: mobile ? 'calc(50% - 50vw)' : '0',
+          mr: mobile ? 'calc(50% - 50vw)' : '0',
           borderRadius: 0,
           [`& .MuiTypography-root`]: {
             textDecoration: 'none',
           },
           [`& .MuiButtonBase-root`]: {
             textTransform: 'capitalize',
+            fontSize: mobile ? '0.6875rem' : '0.875rem',
             padding: '0.1rem',
             fontWeight: 'bold',
             color: '#031626',
           },
           [`& .MuiTabs-indicator`]: {
             color: '#FFF',
-            backgroundColor: '#FFF',
+            backgroundColor: mobile ? '#0099FA' : '#FFF',
           },
           [`& .MuiTab-root.Mui-selected`]: {
-            color: '#FFF',
+            color: mobile ? '#0099FA' : '#FFF',
           },
           [`& .MuiTab-labelIcon`]: {
             marginLeft: 'auto',
@@ -47,8 +52,8 @@ const AppleTabs = () => {
             justifyContent: 'space-evenly',
           },
           [`& .MuiSvgIcon-root`]: {
-            color: 'inherit'
-          }
+            color: 'inherit',
+          },
         }}
         onChange={(e, index) => setTabIndex(index)}
         aria-label="Tabs"

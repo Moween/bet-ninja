@@ -9,10 +9,12 @@ import { startDatePicked, endDatePicked } from '../reducers/historySlice';
 import fetchHistory from '../actions/history';
 
 const DatePicker = () => {
+  const dispatch = useDispatch();
   let startDate = useSelector((state) => state.pastMatchesData.startDate);
   let endDate = useSelector((state) => state.pastMatchesData.endDate);
-  const dispatch = useDispatch();
-  
+  const mobile = useSelector((state) => state.mediaQuery.mobile);
+  const tablet = useSelector((state) => state.mediaQuery.tablet);
+
   const handleClick = () => {
     startDate = lightFormat(startDate, 'yyyy-MM-dd');
     endDate = lightFormat(endDate, 'yyyy-MM-dd');
@@ -20,9 +22,25 @@ const DatePicker = () => {
   };
 
   return (
-    <Box sx={{ display: 'flex', alignItems: 'center', marginLeft: 'auto', padding: '1rem 0' }}>
-      <Calendar label="From Date" date={startDate} action={startDatePicked} />
+    <Box
+      sx={{
+        marginLeft: 'auto',
+        padding: '1rem 0.5rem',
+        color: mobile ? '#ccc' : '#031626',
+        fontWeight: '500',
+      }}
+    >
+      {mobile || tablet ? (
+        <Box sx={{ p: '0.5rem' }}>Filter Matches:</Box>
+      ) : null}
       <Calendar
+        label="From Date"
+        date={startDate}
+        action={startDatePicked}
+        smallAndTabScreen={mobile || tablet}
+      />
+      <Calendar
+        smallAndTabScreen={mobile || tablet}
         label="To Date"
         date={endDate}
         action={endDatePicked}
@@ -33,15 +51,17 @@ const DatePicker = () => {
         variant="contained"
         onClick={handleClick}
         sx={{
+          display: mobile || tablet ? 'block' : 'inline',
           height: 'auto',
           textTransform: 'capitalize',
           backgroundColor: '#0099FA',
           color: '#031626',
           marginLeft: '0.5rem',
+          marginTop: mobile || tablet ? '0.5rem' : 0,
           fontWeight: 'bold',
           '&:hover': {
-            backgroundColor: '#fff'
-          }
+            backgroundColor: '#ccc',
+          },
         }}
         disabled={startDate && endDate ? false : true}
       >
