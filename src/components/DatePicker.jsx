@@ -8,7 +8,7 @@ import Calendar from './Calendar';
 import { startDatePicked, endDatePicked } from '../reducers/historySlice';
 import fetchHistory from '../actions/history';
 
-const DatePicker = () => {
+const DatePicker = ({ closeDrawer }) => {
   const dispatch = useDispatch();
   let startDate = useSelector((state) => state.pastMatchesData.startDate);
   let endDate = useSelector((state) => state.pastMatchesData.endDate);
@@ -49,7 +49,11 @@ const DatePicker = () => {
       <Button
         id="filter_button"
         variant="contained"
-        onClick={handleClick}
+        onClick={(event) => {
+          console.log(event);
+          closeDrawer(); 
+          handleClick();
+        }}
         sx={{
           display: mobile || tablet ? 'block' : 'inline',
           height: 'auto',

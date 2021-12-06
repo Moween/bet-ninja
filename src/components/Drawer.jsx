@@ -51,7 +51,7 @@ const TemporaryDrawer = ({ pathName }) => {
           {pathName === '/pages/history' ? (
             <>
               <Divider />
-              <DatePicker smallAndTabScreen={mobile || tablet} />
+              <DatePicker smallAndTabScreen={mobile || tablet} closeDrawer={() => setState(false)} />
             </>
           ) : null}
         </Box>
