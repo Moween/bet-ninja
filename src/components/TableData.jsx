@@ -4,7 +4,8 @@ import showOutcomeIcon, { getTime } from '../utils';
 import { useSelector } from 'react-redux';
 
 const TableData = ({ match }) => {
-    const tablet = useSelector((state) => state.mediaQuery.tablet);
+  const tablet = useSelector((state) => state.mediaQuery.tablet);
+  const mobile = useSelector((state) => state.mediaQuery.mobile);
 
   const {
     date,
@@ -43,13 +44,13 @@ const TableData = ({ match }) => {
             <span>{countryCode}</span>
           </td>
         ) : null}
-        <td className={ tablet ? 'md-sc' : null}>
+        <td>
+          <span>{league}</span>
+        </td>
+        <td className={ mobile || tablet ? 'md-sc' : 'lg-sc'}>
           <span className="team">{homeTeam}</span>
           <span>vs</span>
           <span className="team">{awayTeam}</span>
-        </td>
-        <td>
-          <span>{league}</span>
         </td>
         <td>
           <span>{odd}</span>

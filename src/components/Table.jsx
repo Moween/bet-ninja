@@ -10,8 +10,8 @@ const Table = (props) => {
         <tr>
           <th>Time</th>
           {!tablet ? <th>Country</th> : null}
-          <th>Match</th>
           <th>League</th>
+          <th>Match</th>
           <th>Odd</th>
           <th>Tip</th>
           <th>Score</th>
