@@ -152,10 +152,11 @@ footer {
   background-color: $darkSlateGray;
   color: $silver;
   .footer__div {
+    @include flexItems(column-reverse, flex-start, flex-start);
     .copyright-text {
       margin-top: 2rem;
-      margin-left: 0.5rem;
-      padding-left: 1rem;
+      margin-left: 0;
+      padding-left: 0;
     }
     .footer-nav {
       width: 45%;
