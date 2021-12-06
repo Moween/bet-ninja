@@ -49,11 +49,14 @@ const DatePicker = ({ closeDrawer }) => {
       <Button
         id="filter_button"
         variant="contained"
-        onClick={(event) => {
-          console.log(event);
-          closeDrawer(); 
-          handleClick();
-        }}
+        onClick={
+          mobile || tablet
+            ? (e) => {
+                closeDrawer();
+                handleClick();
+              }
+            : handleClick
+        }
         sx={{
           display: mobile || tablet ? 'block' : 'inline',
           height: 'auto',

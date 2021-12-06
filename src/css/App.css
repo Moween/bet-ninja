@@ -116,7 +116,7 @@ body {
   color: #ccc;
 }
 
-.header #filter_button.Mui-disabled {
+#filter_button.Mui-disabled {
   background-color: #ccc;
   color: #031626;
   opacity: 0.7;
