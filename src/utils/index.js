@@ -7,7 +7,7 @@ import CloseIcon from '@material-ui/icons/Close';
 
 export const getTime = (date) => format(parseJSON(date), 'HH:mm');
 
-export const getDate = (date) => format(parseJSON(date), 'dd/MM/yyyy');
+export const getDate = (date) => format(parseJSON(date), 'eee, do MMM yyyy');
 
 export const getPastDates = (days) =>
   lightFormat(subDays(new Date(), days), 'yyyy-MM-dd');
