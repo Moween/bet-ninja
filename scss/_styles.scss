@@ -29,7 +29,7 @@ body {
         padding: 0.5rem;
         margin: 1rem;
         &:hover {
-          color: #fff;
+          color: $silver;
         }
       }
     }
@@ -51,7 +51,7 @@ body {
       text-decoration: none;
       font-weight: 500;
       padding: 1rem;
-      color: $silver
+      color: $silver;
     }
   }
 }
@@ -152,10 +152,11 @@ footer {
   background-color: $darkSlateGray;
   color: $silver;
   .footer__div {
+    @include flexItems(column-reverse, flex-start, flex-start);
     .copyright-text {
       margin-top: 2rem;
-      margin-left: 0.5rem;
-      padding-left: 1rem;
+      margin-left: 0;
+      padding-left: 0;
     }
     .footer-nav {
       width: 45%;
@@ -181,25 +182,25 @@ footer {
         a {
           color: $silver;
           &:hover {
-            color: #fff;
+            color: $silver;
           }
         }
       }
     }
 
     #filter_button.Mui-disabled {
-      background-color: #fff;
+      background-color: $silver;
       color: $darkBlue;
     }
   }
 
   .side-nav {
     &-list {
-      a {      
+      a {
         color: $darkBlue;
       }
-    } 
-  } 
+    }
+  }
 
   main {
     padding: 5rem 0;

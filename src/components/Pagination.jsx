@@ -4,18 +4,18 @@ import Pagination from '@mui/material/Pagination';
 const PaginateData = ({ items, tablePerPage, page, handleChange }) => {
   const count = Math.ceil(items.length / tablePerPage);
   return (
-    <Pagination 
+    <Pagination
       count={count}
       sx={{
         mt: '2rem',
         [`& .MuiPagination-ul`]: {
           justifyContent: 'center',
           [`& .MuiPaginationItem-root.Mui-selected`]: {
-            backgroundColor: '#fff',
+            backgroundColor: '#ccc',
             color: '#031626',
           },
         },
-        visibility: `${count === 1  ? 'hidden' : 'visible'}`
+        visibility: `${count === 1 ? 'hidden' : 'visible'}`,
       }}
       page={page}
       variant="outlined"

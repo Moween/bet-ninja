@@ -3,6 +3,7 @@ import { useLocation } from 'react-router';
 import { useSelector } from 'react-redux';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
+import Link from '@material-ui/core/Link';
 import Container from '@material-ui/core/Container';
 import SportsSoccerIcon from '@material-ui/icons/SportsSoccer';
 
@@ -32,7 +33,9 @@ const Header = () => {
               component="h1"
               sx={{ fontFamily: "'Lobster', cursive" }}
             >
-              EchelonBetTips
+              <Link href="/" underline="none" color="inherit">
+                EchelonBetTips
+              </Link>
             </Typography>
           </Box>
           {mobile || tablet ? (
