@@ -156,5 +156,6 @@ export const useStyles = makeStyles((theme) => ({
   loadingText: {
     textAlign: 'center',
     marginTop: '0.5rem',
+    color: '#ccc',
   },
 }));
