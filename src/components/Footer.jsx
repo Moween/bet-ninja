@@ -26,6 +26,7 @@ const Footer = () => {
           <List className="footer-list">
             {footerLinks.map((link) => (
               <ListItem
+                key={link}
                 button
                 component={Link}
                 href="/"
