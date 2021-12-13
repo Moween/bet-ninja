@@ -2,18 +2,27 @@ import React from 'react';
 import Pagination from '@mui/material/Pagination';
 
 const PaginateData = ({ items, tablePerPage, page, handleChange }) => {
+  const count = Math.ceil(items.length / tablePerPage);
   return (
     <Pagination
-      count={Math.ceil(items.length / tablePerPage)}
-      sx={{ mt: '2rem',
-        [`& .Mui-selected`]: {
-          color: '#ccc',
-        }
+      count={count}
+      sx={{
+        mt: '2rem',
+        [`& .MuiPagination-ul`]: {
+          justifyContent: 'center',
+          [`& .MuiPaginationItem-root.Mui-selected`]: {
+            backgroundColor: '#ccc',
+            color: '#031626',
+          },
+        },
+        visibility: `${count === 1 ? 'hidden' : 'visible'}`,
       }}
       page={page}
       variant="outlined"
       shape="rounded"
       onChange={handleChange}
+      hidePrevButton={page === 1 ? true : false}
+      hideNextButton={page === count ? true : false}
     />
   );
 };

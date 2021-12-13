@@ -1,25 +1,26 @@
-import React from "react";
-import TableData from "./TableData";
+import React from 'react';
+import Box from '@material-ui/core/Box';
+import { useSelector } from 'react-redux';
 
-const Table = ({ soccerData, date }) => {
+const Table = (props) => {
+  const tablet = useSelector(state => state.mediaQuery.tablet);
   return (
-    <table>
-      <colgroup>
-        <col span="2" />
-      </colgroup>
+    <Box component="table">
       <thead>
         <tr>
-          <th colSpan="2">{date}</th>
+          <th>Time</th>
+          {!tablet ? <th>Country</th> : null}
           <th>League</th>
+          <th>Match</th>
           <th>Odd</th>
           <th>Tip</th>
           <th>Score</th>
+          {!tablet ? <th>Result</th> : null}
+          <th>Outcome</th>
         </tr>
       </thead>
-      <tbody>
-        {soccerData.map(match => <TableData key={match.fid} match={match} />)}
-      </tbody>
-    </table>
+      {props.children}
+    </Box>
   );
 };
 

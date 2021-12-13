@@ -11,18 +11,10 @@ const LinkBehavior = forwardRef((props, ref) => {
 });
 
 export const theme = createTheme({
-  breakpoints: {
-    // Media Query Breakpoint
-    values: {
-      xs: 0,
-      sm: 375,
-      md: 768,
-      lg: 1024,
-      xl: 1140,
-    },
-    unit: 'px',
-  },
   palette: {
+    primary: {
+      main: '#031626',
+    },
     secondary: {
       main: '#42b72a',
     },
@@ -33,10 +25,33 @@ export const theme = createTheme({
         component: LinkBehavior,
       },
     },
+    MuiPaper: {
+      styleOverrides: {
+        root: {
+          backgroundColor: '#f1f1e6',
+        },
+      },
+    },
+    MuiPickersDay: {
+      styleOverrides: {
+        root: {
+          backgroundColor: '#f1f1e6',
+          color: 'inherit',
+        },
+      },
+    },
     MuiInputBase: {
       styleOverrides: {
         root: {
           color: '#ccc',
+          width: '9rem',
+          height: '2.5rem',
+          marginLeft: '0.5rem',
+          padding: 0,
+        },
+        input: {
+          height: '2rem',
+          fontSize: '0.875rem',
         },
       },
     },
@@ -44,6 +59,17 @@ export const theme = createTheme({
       styleOverrides: {
         root: {
           color: '#ccc',
+          fontWeight: 'bold',
+          lineHeight: 1,
+          fontSize: '0.875rem',
+        },
+      },
+    },
+    MuiInputLabel: {
+      styleOverrides: {
+        root: {
+          top: '-5%',
+          left: '4%'
         },
       },
     },
@@ -51,6 +77,61 @@ export const theme = createTheme({
       styleOverrides: {
         notchedOutline: {
           borderColor: '#ccc',
+        },
+      },
+    },
+    MuiSvgIcon: {
+      styleOverrides: {
+        root: {
+          color: '#ccc',
+        },
+      },
+    },
+    MuiButtonBase: {
+      styleOverrides: {
+        backgroundColor: '#0099FA',
+      },
+    },
+    MuiPaginationItem: {
+      styleOverrides: {
+        outlined: {
+          color: '#ccc',
+          borderColor: '#031626',
+          backgroundColor: '#031626',
+          fontWeight: 'bold',
+          '&:hover': {
+            color: '#031626',
+          },
+        },
+      },
+    },
+    MuiTabs: {
+      styleOverrides: {
+        root: {
+          padding: '.1rem',
+          borderRadius: 0,
+        },
+      },
+    },
+    MuiTab: {
+      styleOverrides: {
+        root: {
+          minHeight: 50,
+        },
+      },
+    },
+    MuiSelected: {
+      styleOverrides: {
+        root: {
+          color: '#ccc',
+        },
+      },
+    },
+    MuiTabIndicator: {
+      styleOverrides: {
+        root: {
+          color: '#ccc',
+          backgroundColor: '#ccc',
         },
       },
     },
@@ -69,11 +150,12 @@ export const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
   },
   soccerIcon: {
-    color: 'white',
+    color: '#ccc',
   },
   // TableData Styles
   loadingText: {
     textAlign: 'center',
     marginTop: '0.5rem',
+    color: '#ccc',
   },
 }));

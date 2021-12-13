@@ -1,36 +1,53 @@
 import React from 'react';
+import { useLocation } from 'react-router';
+import { useSelector } from 'react-redux';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
+import Link from '@material-ui/core/Link';
 import Container from '@material-ui/core/Container';
 import SportsSoccerIcon from '@material-ui/icons/SportsSoccer';
+
+import Drawer from './Drawer';
 import { useStyles } from '../utils/muiStyles';
 import Navbar from './Navbar';
+import DatePicker from './DatePicker';
 
 const Header = () => {
+  const { pathname } = useLocation();
   const { brandLogo, logoContainer, soccerIcon } = useStyles();
+  const mobile = useSelector(state => state.mediaQuery.mobile);
+  const tablet = useSelector(state => state.mediaQuery.tablet);
+
   return (
     <Box component="header" className="header">
-      <Container maxWidth="false">
-        <Box className="header__div">
+      <Container maxWidth="xl">
+        <Box
+          className={mobile || tablet ? 'header__div__sm' : 'header__div__lg'}
+          sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        >
           <Box className={logoContainer}>
-            <SportsSoccerIcon className={soccerIcon} />
+            <SportsSoccerIcon className={soccerIcon} fontSize="medium" />
             <Typography
               className={brandLogo}
-              variant="h2"
+              variant={mobile ? 'h5' : 'h4'}
               component="h1"
               sx={{ fontFamily: "'Lobster', cursive" }}
             >
-              Bet
-              <Typography
-                variant="h2"
-                component="span"
-                sx={{ color: '#612a11', fontFamily: "'Lobster', cursive"  }}
-              >
-                Ninja
-              </Typography>
+              <Link href="/" underline="none" color="inherit">
+                EchelonBetTips
+              </Link>
             </Typography>
           </Box>
-          <Navbar />
+          {mobile || tablet ? (
+            <Drawer pathName={pathname} />
+          ) : (
+            <>
+              <Navbar />
+              {pathname === '/pages/history' ? (
+                <DatePicker smallAndTabScreen={mobile || tablet} />
+              ) : null}
+            </>
+          )}
         </Box>
       </Container>
     </Box>

@@ -1,25 +1,81 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
-import TextField from '@material-ui/core/TextField';
-import AdapterDateFns from '@material-ui/lab/AdapterDateFns';
-import LocalizationProvider from '@material-ui/lab/LocalizationProvider';
-import DatePicker from '@material-ui/lab/DatePicker';
+import { useSelector, useDispatch } from 'react-redux';
+import Box from '@material-ui/core/Box';
+import Button from '@material-ui/core/Button';
+import lightFormat from 'date-fns/lightFormat';
 
-const Calendar = ({ label, date, action }) => {
+import Calendar from './Calendar';
+import { startDatePicked, endDatePicked } from '../reducers/historySlice';
+import fetchHistory from '../actions/history';
+
+const DatePicker = ({ closeDrawer }) => {
   const dispatch = useDispatch();
-  const handleChange = (value) => {
-    dispatch(action(value));
+  let startDate = useSelector((state) => state.pastMatchesData.startDate);
+  let endDate = useSelector((state) => state.pastMatchesData.endDate);
+  const mobile = useSelector((state) => state.mediaQuery.mobile);
+  const tablet = useSelector((state) => state.mediaQuery.tablet);
+
+  const handleClick = () => {
+    startDate = lightFormat(startDate, 'yyyy-MM-dd');
+    endDate = lightFormat(endDate, 'yyyy-MM-dd');
+    dispatch(fetchHistory({ startDate, endDate }));
   };
+
   return (
-    <LocalizationProvider dateAdapter={AdapterDateFns}>
-      <DatePicker
-        label={label}
-        value={date}
-        onChange={handleChange}
-        renderInput={(params) => <TextField {...params} />}
+    <Box
+      sx={{
+        marginLeft: 'auto',
+        padding: '1rem 0.5rem',
+        color: mobile ? '#ccc' : '#031626',
+        fontWeight: '500',
+      }}
+    >
+      {mobile || tablet ? (
+        <Box sx={{ p: '0.5rem' }}>Filter Matches:</Box>
+      ) : null}
+      <Calendar
+        label="From Date"
+        date={startDate}
+        action={startDatePicked}
+        smallAndTabScreen={mobile || tablet}
       />
-    </LocalizationProvider>
+      <Calendar
+        smallAndTabScreen={mobile || tablet}
+        label="To Date"
+        date={endDate}
+        action={endDatePicked}
+        minDate={startDate}
+      />
+      <Button
+        id="filter_button"
+        variant="contained"
+        onClick={
+          mobile || tablet
+            ? (e) => {
+                closeDrawer();
+                handleClick();
+              }
+            : handleClick
+        }
+        sx={{
+          display: mobile || tablet ? 'block' : 'inline',
+          height: 'auto',
+          textTransform: 'capitalize',
+          backgroundColor: '#0099FA',
+          color: '#031626',
+          marginLeft: '0.5rem',
+          marginTop: mobile || tablet ? '0.5rem' : 0,
+          fontWeight: 'bold',
+          '&:hover': {
+            backgroundColor: '#ccc',
+          },
+        }}
+        disabled={startDate && endDate ? false : true}
+      >
+        Filter
+      </Button>
+    </Box>
   );
 };
 
-export default Calendar;
+export default DatePicker;
