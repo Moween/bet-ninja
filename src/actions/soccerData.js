@@ -10,7 +10,7 @@ async function fetchMatches() {
 }
 // Async Logic using middleware
 const fetchSoccerData = createAsyncThunk(
-  'soccerData/fetchSoccerdata',
+  'SoccerData/FetchSoccerdata',
   fetchMatches
 );
 

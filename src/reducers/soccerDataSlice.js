@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import fetchSoccerData from '../actions/soccerData';
 
 const soccerDataSlice = createSlice({
-  name: 'soccerData',
+  name: 'SoccerData',
   initialState: {
     soccerData: [],
     status: 'idle',

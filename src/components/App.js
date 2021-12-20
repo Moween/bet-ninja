@@ -10,15 +10,15 @@ import Home from '../pages/Home';
 import History from '../pages/History';
 import Footer from './Footer';
 import '../css/App.css';
-import { setSmallScreen, setMediumScreen } from '../reducers/mediaQuery';
+import { SetSmallScreen, SetMediumScreen } from '../reducers/mediaQuery';
 
 function App() {
   const dispatch = useDispatch();
   const isMobile = useMediaQuery(theme.breakpoints.down(768));
   const isTablet = useMediaQuery(theme.breakpoints.between(768, 1024));
 
-  dispatch(setMediumScreen(isTablet));
-  dispatch(setSmallScreen(isMobile));
+  dispatch(SetMediumScreen(isTablet));
+  dispatch(SetSmallScreen(isMobile));
 
   return (
     <ThemeProvider theme={theme}>

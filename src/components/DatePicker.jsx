@@ -5,7 +5,7 @@ import Button from '@material-ui/core/Button';
 import lightFormat from 'date-fns/lightFormat';
 
 import Calendar from './Calendar';
-import { startDatePicked, endDatePicked } from '../reducers/historySlice';
+import { StartDatePicked, EndDatePicked } from '../reducers/historySlice';
 import fetchHistory from '../actions/history';
 
 const DatePicker = ({ closeDrawer }) => {
@@ -36,14 +36,14 @@ const DatePicker = ({ closeDrawer }) => {
       <Calendar
         label="From Date"
         date={startDate}
-        action={startDatePicked}
+        action={StartDatePicked}
         smallAndTabScreen={mobile || tablet}
       />
       <Calendar
         smallAndTabScreen={mobile || tablet}
         label="To Date"
         date={endDate}
-        action={endDatePicked}
+        action={EndDatePicked}
         minDate={startDate}
       />
       <Button
