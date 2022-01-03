@@ -20,6 +20,7 @@ function App() {
   useEffect(() => {
     dispatch(SetMediumScreen(isTablet));
     dispatch(SetSmallScreen(isMobile));
+    // eslint-disable-next-line
   }, []);
 
   return (
