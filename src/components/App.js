@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { ThemeProvider } from '@material-ui/core/styles';
 import { useDispatch } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
@@ -17,8 +17,10 @@ function App() {
   const isMobile = useMediaQuery(theme.breakpoints.down(768));
   const isTablet = useMediaQuery(theme.breakpoints.between(768, 1024));
 
-  dispatch(SetMediumScreen(isTablet));
-  dispatch(SetSmallScreen(isMobile));
+  useEffect(() => {
+    dispatch(SetMediumScreen(isTablet));
+    dispatch(SetSmallScreen(isMobile));
+  }, []);
 
   return (
     <ThemeProvider theme={theme}>
