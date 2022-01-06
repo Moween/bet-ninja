@@ -58,7 +58,7 @@ body {
 
 main {
   padding: 2.1875rem 0;
-  .loadingText {
+  .text {
     color: $silver;
     margin-top: 1rem;
     padding-top: 3rem;
@@ -203,15 +203,12 @@ footer {
   }
 
   main {
-    padding: 5rem 0;
     width: 90%;
     margin: 0 auto;
-    .loadingText {
-      color: $darkBlue;
-    }
   }
 
   table {
+    margin-top: 2rem;
     tr:nth-child(even) {
       background-color: #dddddd;
     }
@@ -236,7 +233,6 @@ footer {
 
   footer {
     color: $silver;
-    background-color: $darkBlue;
   }
 }
 
