@@ -20,9 +20,17 @@ const Home = () => {
 
   const renderContent = () => {
     if (soccerDataStatus === 'loading') {
-      return <Typography component="p" className="loadingText">Loading...</Typography>;
+      return (
+        <Typography component="p" className="text">
+          Loading...
+        </Typography>
+      );
     } else if (soccerDataStatus === 'succeeded') {
-      return <Tabs />;
+      return (
+        <Box>
+          <Tabs />
+        </Box>
+      );
     }
   };
   return (
