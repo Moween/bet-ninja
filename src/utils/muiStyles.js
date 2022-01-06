@@ -153,7 +153,7 @@ export const useStyles = makeStyles((theme) => ({
     color: '#ccc',
   },
   // TableData Styles
-  loadingText: {
+  text: {
     textAlign: 'center',
     marginTop: '0.5rem',
     color: '#ccc',
