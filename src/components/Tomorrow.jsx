@@ -21,8 +21,8 @@ const Tomorrow = () => {
 
   return (
     <Box id="tomorrow">
-      {tomorrowMatches ? (
-        <Text content="No Games..." />
+      {!tomorrowMatches.length ? (
+        <Text content="There are no games scheduled for tomorrow..." />
       ) : mobile || tablet ? (
         <MobileTable soccerData={tomorrowMatches} date={tomorrowDate} />
       ) : (

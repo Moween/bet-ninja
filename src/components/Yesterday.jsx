@@ -20,8 +20,8 @@ const Yesterday = () => {
 
   return (
     <Box id="yesterday">
-      {yesterdayMatches ? (
-        <Text content="No Games..." />
+      {!yesterdayMatches.length ? (
+        <Text content="No games schedule..." />
       ) : mobile || tablet ? (
         <MobileTable soccerData={yesterdayMatches} date={yesterdayDate} />
       ) : (

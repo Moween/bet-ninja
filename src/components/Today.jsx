@@ -19,8 +19,8 @@ const Today = () => {
 
   return (
     <Box sx={{ overflowX: 'auto' }}>
-      {todayMatches ? (
-        <Text content="No Games..." />
+      {!todayMatches.length ? (
+        <Text content="There are no games scheduled for today..." />
       ) : mobile || tablet ? (
         <MobileTable soccerData={todayMatches} date={todayDate} />
       ) : (
