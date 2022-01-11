@@ -1,11 +1,13 @@
 import React from 'react';
 import Box from '@material-ui/core/Box';
+import { useMediaQuery } from '@material-ui/core';
+
 import showOutcomeIcon, { getTime } from '../utils';
-import { useSelector } from 'react-redux';
+import { theme } from '../utils/muiStyles';
 
 const TableData = ({ match }) => {
-  const tablet = useSelector((state) => state.mediaQuery.tablet);
-  const mobile = useSelector((state) => state.mediaQuery.mobile);
+  const mobile = useMediaQuery(theme.breakpoints.down(768));
+  const tablet = useMediaQuery(theme.breakpoints.between(768, 1024));
 
   const {
     date,
@@ -18,8 +20,6 @@ const TableData = ({ match }) => {
     score,
     outcome,
   } = match;
-
-  
 
   return (
     <>
@@ -47,9 +47,9 @@ const TableData = ({ match }) => {
         <td>
           <span>{league}</span>
         </td>
-        <td className={ mobile || tablet ? 'md-sc' : 'lg-sc'}>
+        <td className={mobile || tablet ? 'md-sc' : 'lg-sc'}>
           <span className="team">{homeTeam}</span>
-          <span>vs</span>
+          {tablet ? null : <span>vs</span>}
           <span className="team">{awayTeam}</span>
         </td>
         <td>

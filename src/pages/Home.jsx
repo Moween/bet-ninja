@@ -2,11 +2,11 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
-import Typography from '@material-ui/core/Typography';
 import { ToastContainer } from 'react-toastify'; // To display network errors
 import 'react-toastify/dist/ReactToastify.css';
 import fetchSoccerData from '../actions/soccerData';
 import Tabs from '../components/Tabs';
+import Text from '../components/Text';
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -20,11 +20,7 @@ const Home = () => {
 
   const renderContent = () => {
     if (soccerDataStatus === 'loading') {
-      return (
-        <Typography component="p" className="text">
-          Loading...
-        </Typography>
-      );
+      return <Text content="Loading..." />;
     } else if (soccerDataStatus === 'succeeded') {
       return (
         <Box>

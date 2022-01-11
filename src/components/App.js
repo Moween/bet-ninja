@@ -1,34 +1,23 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { ThemeProvider } from '@material-ui/core/styles';
-import { useDispatch } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
 import { theme } from '../utils/muiStyles';
-import { useMediaQuery } from '@material-ui/core';
 
 import Header from './Header';
 import Home from '../pages/Home';
 import History from '../pages/History';
 import Footer from './Footer';
 import '../css/App.css';
-import { SetSmallScreen, SetMediumScreen } from '../reducers/mediaQuery';
+import NotFound from '../pages/NotFound';
 
 function App() {
-  const dispatch = useDispatch();
-  const isMobile = useMediaQuery(theme.breakpoints.down(768));
-  const isTablet = useMediaQuery(theme.breakpoints.between(768, 1024));
-
-  useEffect(() => {
-    dispatch(SetMediumScreen(isTablet));
-    dispatch(SetSmallScreen(isMobile));
-    // eslint-disable-next-line
-  }, []);
-
   return (
     <ThemeProvider theme={theme}>
       <Header />
       <Switch>
         <Route path="/pages/history" component={History} />
         <Route path="/" component={Home} />
+        <Route path="*" component={NotFound} />
       </Switch>
       <Footer />
     </ThemeProvider>

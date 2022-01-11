@@ -3,9 +3,9 @@ import { useSelector, useDispatch } from 'react-redux';
 import { ToastContainer } from 'react-toastify';
 import Box from '@material-ui/core/Box';
 import Container from '@material-ui/core/Container';
-import Typography from '@material-ui/core/Typography';
+import { useMediaQuery } from '@material-ui/core';
 
-import { useStyles } from '../utils/muiStyles';
+import { theme } from '../utils/muiStyles';
 import fetchHistory from '../actions/history';
 import Table from '../components/Table';
 import TableBody from '../components/TableBody';
@@ -20,8 +20,8 @@ const History = () => {
   const tablePerPage = 3;
   const soccerData = useSelector((state) => state.pastMatchesData.soccerData);
   const soccerDataStatus = useSelector((state) => state.pastMatchesData.status);
-  const mobile = useSelector((state) => state.mediaQuery.mobile);
-  const tablet = useSelector((state) => state.mediaQuery.tablet);
+  const mobile = useMediaQuery(theme.breakpoints.down(768));
+  const tablet = useMediaQuery(theme.breakpoints.between(768, 1024));
 
   const handleChange = (event, value) => {
     setPage(value);
@@ -51,7 +51,7 @@ const History = () => {
 
   const renderContent = () => {
     if (soccerDataStatus === 'loading') {
-      return <Text content="loading" />;
+      return <Text content="Loading..." />;
     } else if (soccerDataStatus === 'succeeded') {
       const tableBody = Object.entries(groupMatchesByDate(soccerData, 'date'))
         .slice((page - 1) * tablePerPage, page * tablePerPage)
