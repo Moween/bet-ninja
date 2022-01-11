@@ -152,10 +152,11 @@ export const useStyles = makeStyles((theme) => ({
   soccerIcon: {
     color: '#ccc',
   },
-  // TableData Styles
+  // Text Styles
   text: {
     textAlign: 'center',
     marginTop: '0.5rem',
+    padding: '2rem',
     color: '#ccc',
   },
 }));
