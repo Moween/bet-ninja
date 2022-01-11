@@ -67,33 +67,25 @@ main {
 }
 
 table {
+  margin-top: 2rem;
   font-family: arial, sans-serif;
-  border-collapse: collapse;
+  border: 1px solid $silver;
   width: 100%;
   font-size: 0.75rem;
   table-layout: auto;
-  tr:nth-child(even) {
-    background-color: #dddddd;
-  }
+  color: $silver;
+
   thead {
     font-weight: bold;
-    tr {
-      &:nth-of-type(1) {
-        background-color: $primaryColor;
-      }
-    }
     th {
-      border-width: 2px;
+      border-width: 1px;
       border-style: solid;
       border-color: $silver;
       padding: 0.7rem;
-      color: $black;
       &:nth-of-type(1) {
-        border-left-width: 0;
         padding-left: 1rem;
       }
       &:last-of-type {
-        border-right-width: 0;
         width: 4%;
       }
     }
@@ -103,7 +95,7 @@ table {
       th {
         padding: 0.5rem;
       }
-      background-color: #0099fa;
+      border: 1px solid $silver;
       font-weight: bold;
     }
 
@@ -111,11 +103,15 @@ table {
       text-align: center;
       padding: 0.5rem;
       vertical-align: middle;
+
       &:nth-of-type(4) {
         text-align: left;
+        padding: 1rem 0.2rem;
+
       }
       &:nth-of-type(5) {
         padding: 0.5rem 0.2rem;
+
       }
       &:last-of-type {
         width: 4%;
@@ -139,6 +135,7 @@ table {
         font-weight: bold;
         width: 55%;
         margin: 0 auto;
+        background-color: $primaryColor;
       }
     }
     .team {
@@ -205,30 +202,6 @@ footer {
   main {
     width: 90%;
     margin: 0 auto;
-  }
-
-  table {
-    margin-top: 2rem;
-    tr:nth-child(even) {
-      background-color: #dddddd;
-    }
-    thead {
-      tr {
-        &:nth-of-type(1) {
-          background-color: $primaryColor;
-        }
-      }
-      th {
-        border-color: $silver;
-        color: $black;
-      }
-    }
-    tbody {
-      .date {
-        background-color: #0099fa;
-        font-weight: bold;
-      }
-    }
   }
 
   footer {
