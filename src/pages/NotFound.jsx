@@ -4,10 +4,10 @@ import Typography from '@material-ui/core/Box';
 
 const NotFound = () => {
   return (
-    <Box>
-     <Typography>Page Not Found</Typography> 
+    <Box sx={{ color: '#ffffff', marginTop: '4rem', textAlign: 'center' }}>
+      <Typography>Page Not Found</Typography>
     </Box>
-  )
+  );
 }
 
 export default NotFound;
