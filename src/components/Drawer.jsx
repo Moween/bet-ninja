@@ -11,7 +11,7 @@ import DatePicker from './DatePicker';
 import { theme } from '../utils/muiStyles';
 
 const TemporaryDrawer = ({ pathName }) => {
-  const [state, setState] = useState(false);
+  const [open, setOpen] = useState(false);
   const mobile = useMediaQuery(theme.breakpoints.down(768));
   const tablet = useMediaQuery(theme.breakpoints.between(768, 1024));
 
@@ -23,7 +23,7 @@ const TemporaryDrawer = ({ pathName }) => {
       return;
     }
 
-    setState((prevState) => !prevState);
+    setOpen((prevState) => !prevState);
   };
 
   return (
@@ -32,7 +32,7 @@ const TemporaryDrawer = ({ pathName }) => {
       <SwipeableDrawer
         variant="temporary"
         anchor="right"
-        open={state}
+        open={open}
         onClose={toggleDrawer}
         onOpen={toggleDrawer}
         sx={{
@@ -54,7 +54,7 @@ const TemporaryDrawer = ({ pathName }) => {
               <Divider />
               <DatePicker
                 smallAndTabScreen={mobile || tablet}
-                closeDrawer={() => setState(false)}
+                closeDrawer={() => setOpen(false)}
               />
             </>
           ) : null}
