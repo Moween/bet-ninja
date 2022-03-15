@@ -15,8 +15,8 @@ function App() {
     <ThemeProvider theme={theme}>
       <Header />
       <Switch>
-        <Route path="/pages/history" component={History} />
-        <Route path="/" component={Home} />
+        <Route path="/history" exact component={History} />
+        <Route path="/" exact component={Home} />
         <Route path="*" component={NotFound} />
       </Switch>
       <Footer />

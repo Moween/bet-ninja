@@ -11,7 +11,7 @@ const navLinks = [
   },
   {
     name: 'History',
-    path: '/pages/history',
+    path: '/history',
   },
 ];
 
