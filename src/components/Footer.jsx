@@ -1,5 +1,5 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useMediaQuery } from '@material-ui/core';
 import Box from '@material-ui/core/Box';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
@@ -8,9 +8,11 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 
+import { theme } from '../utils/muiStyles';
+
 const Footer = () => {
-  const mobile = useSelector((state) => state.mediaQuery.mobile);
-  const tablet = useSelector((state) => state.mediaQuery.tablet);
+  const mobile = useMediaQuery(theme.breakpoints.down(768));
+  const tablet = useMediaQuery(theme.breakpoints.between(768, 1024));
   const footerLinks = ['Terms', 'Privacy', 'Contact us', 'About'];
   return (
     <Box component="footer">

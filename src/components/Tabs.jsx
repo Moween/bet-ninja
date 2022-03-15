@@ -4,15 +4,16 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import SortIcon from '@material-ui/icons/Sort';
 import { appleTabsStylesHook } from '@mui-treasury/styles/tabs';
-import { useSelector } from 'react-redux';
+import { useMediaQuery } from '@material-ui/core';
 
 import Today from '../components/Today';
 import Yesterday from '../components/Yesterday';
 import Tomorrow from '../components/Tomorrow';
+import { theme } from '../utils/muiStyles';
 
 const AppleTabs = () => {
   const [tabIndex, setTabIndex] = useState(1);
-  const mobile = useSelector((state) => state.mediaQuery.mobile);
+  const mobile = useMediaQuery(theme.breakpoints.down(768));
   const tabsStyles = appleTabsStylesHook.useTabs();
   const tabItemStyles = appleTabsStylesHook.useTabItem();
 
@@ -24,9 +25,9 @@ const AppleTabs = () => {
         selectionFollowsFocus
         sx={{
           padding: 0,
-          backgroundColor: mobile ? '#ccc' : '#0099FA',
-          ml: mobile ? 'calc(50% - 50vw)' : '0',
-          mr: mobile ? 'calc(50% - 50vw)' : '0',
+          backgroundColor: mobile ? '#ccc' : '#ccc',
+          ml: 'calc(50% - 50vw)',
+          mr: 'calc(50% - 50vw)',
           borderRadius: 0,
           [`& .MuiTypography-root`]: {
             textDecoration: 'none',
@@ -34,7 +35,6 @@ const AppleTabs = () => {
           [`& .MuiButtonBase-root`]: {
             textTransform: 'capitalize',
             fontSize: mobile ? '0.6875rem' : '0.875rem',
-            padding: '0.1rem',
             fontWeight: 'bold',
             color: '#031626',
           },
@@ -43,7 +43,7 @@ const AppleTabs = () => {
             backgroundColor: mobile ? '#0099FA' : '#ccc',
           },
           [`& .MuiTab-root.Mui-selected`]: {
-            color: mobile ? '#0099FA' : '#ccc',
+            color: '#0099FA',
           },
           [`& .MuiTab-labelIcon`]: {
             marginLeft: 'auto',
@@ -67,6 +67,7 @@ const AppleTabs = () => {
           disableRipple
           aria-label="sort"
           label="Sort"
+          sx={{ mr: mobile ? 'auto' : '1.45rem' }}
         />
       </Tabs>
       <TabPanel value={tabIndex} index={0}>

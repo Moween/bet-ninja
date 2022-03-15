@@ -1,14 +1,5 @@
-import React, { forwardRef } from 'react';
 import { createTheme } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
-import { Link } from 'react-router-dom';
-
-// Customize Mui Link Component
-const LinkBehavior = forwardRef((props, ref) => {
-  const { href, ...other } = props;
-  // Map href (MUI) -> to (react-router)
-  return <Link data-testid="custom-link" ref={ref} to={href} {...other} />;
-});
 
 export const theme = createTheme({
   palette: {
@@ -20,11 +11,6 @@ export const theme = createTheme({
     },
   },
   components: {
-    MuiLink: {
-      defaultProps: {
-        component: LinkBehavior,
-      },
-    },
     MuiPaper: {
       styleOverrides: {
         root: {
@@ -69,7 +55,7 @@ export const theme = createTheme({
       styleOverrides: {
         root: {
           top: '-5%',
-          left: '4%'
+          left: '4%',
         },
       },
     },
@@ -152,10 +138,11 @@ export const useStyles = makeStyles((theme) => ({
   soccerIcon: {
     color: '#ccc',
   },
-  // TableData Styles
-  loadingText: {
+  // Text Styles
+  text: {
     textAlign: 'center',
     marginTop: '0.5rem',
+    padding: '2rem',
     color: '#ccc',
   },
 }));

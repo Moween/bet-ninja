@@ -1,22 +1,22 @@
 import React from 'react';
 import { useLocation } from 'react-router';
-import { useSelector } from 'react-redux';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
 import Container from '@material-ui/core/Container';
 import SportsSoccerIcon from '@material-ui/icons/SportsSoccer';
+import { useMediaQuery } from '@material-ui/core';
 
 import Drawer from './Drawer';
-import { useStyles } from '../utils/muiStyles';
+import { useStyles, theme } from '../utils/muiStyles';
 import Navbar from './Navbar';
 import DatePicker from './DatePicker';
 
 const Header = () => {
   const { pathname } = useLocation();
   const { brandLogo, logoContainer, soccerIcon } = useStyles();
-  const mobile = useSelector(state => state.mediaQuery.mobile);
-  const tablet = useSelector(state => state.mediaQuery.tablet);
+  const mobile = useMediaQuery(theme.breakpoints.down(768));
+  const tablet = useMediaQuery(theme.breakpoints.between(768, 1024));
 
   return (
     <Box component="header" className="header">

@@ -1,19 +1,21 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { useMediaQuery } from '@material-ui/core';
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
 import lightFormat from 'date-fns/lightFormat';
 
 import Calendar from './Calendar';
-import { startDatePicked, endDatePicked } from '../reducers/historySlice';
+import { StartDatePicked, EndDatePicked } from '../reducers/historySlice';
+import { theme } from '../utils/muiStyles';
 import fetchHistory from '../actions/history';
 
 const DatePicker = ({ closeDrawer }) => {
   const dispatch = useDispatch();
   let startDate = useSelector((state) => state.pastMatchesData.startDate);
   let endDate = useSelector((state) => state.pastMatchesData.endDate);
-  const mobile = useSelector((state) => state.mediaQuery.mobile);
-  const tablet = useSelector((state) => state.mediaQuery.tablet);
+  const mobile = useMediaQuery(theme.breakpoints.down(768));
+  const tablet = useMediaQuery(theme.breakpoints.between(768, 1024));
 
   const handleClick = () => {
     startDate = lightFormat(startDate, 'yyyy-MM-dd');
@@ -36,14 +38,14 @@ const DatePicker = ({ closeDrawer }) => {
       <Calendar
         label="From Date"
         date={startDate}
-        action={startDatePicked}
+        action={StartDatePicked}
         smallAndTabScreen={mobile || tablet}
       />
       <Calendar
         smallAndTabScreen={mobile || tablet}
         label="To Date"
         date={endDate}
-        action={endDatePicked}
+        action={EndDatePicked}
         minDate={startDate}
       />
       <Button

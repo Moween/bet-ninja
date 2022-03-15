@@ -105,6 +105,7 @@ body {
 
 .header .nav_list a {
   color: #ccc;
+  font-weight: 500;
   text-decoration: none;
   width: 20%;
   font-family: 1.5rem;
@@ -154,7 +155,7 @@ main {
   padding: 2.1875rem 0;
 }
 
-main .loadingText {
+main .text {
   color: #ccc;
   margin-top: 1rem;
   padding-top: 3rem;
@@ -162,45 +163,36 @@ main .loadingText {
 }
 
 table {
+  margin-top: 2rem;
   font-family: arial, sans-serif;
-  border-collapse: collapse;
+  border: 1px solid #ccc;
   width: 100%;
   font-size: 0.75rem;
   table-layout: auto;
-}
-
-table tr:nth-child(even) {
-  background-color: #dddddd;
+  color: #ccc;
 }
 
 table thead {
   font-weight: bold;
 }
 
-table thead tr:nth-of-type(1) {
-  background-color: #0099FA;
-}
-
 table thead th {
-  border-width: 2px;
+  border-width: 1px;
   border-style: solid;
   border-color: #ccc;
   padding: 0.7rem;
-  color: black;
 }
 
 table thead th:nth-of-type(1) {
-  border-left-width: 0;
   padding-left: 1rem;
 }
 
 table thead th:last-of-type {
-  border-right-width: 0;
   width: 4%;
 }
 
 table tbody .date {
-  background-color: #0099fa;
+  border: 1px solid #ccc;
   font-weight: bold;
 }
 
@@ -216,6 +208,7 @@ table tbody td {
 
 table tbody td:nth-of-type(4) {
   text-align: left;
+  padding: 1rem 0.2rem;
 }
 
 table tbody td:nth-of-type(5) {
@@ -273,6 +266,7 @@ table tbody .time div {
   font-weight: bold;
   width: 55%;
   margin: 0 auto;
+  background-color: #0099FA;
 }
 
 table tbody .team {
@@ -353,30 +347,11 @@ footer .footer__div .footer-nav .footer-list li {
     color: #031626;
   }
   main {
-    padding: 5rem 0;
     width: 90%;
     margin: 0 auto;
   }
-  main .loadingText {
-    color: #031626;
-  }
-  table tr:nth-child(even) {
-    background-color: #dddddd;
-  }
-  table thead tr:nth-of-type(1) {
-    background-color: #0099FA;
-  }
-  table thead th {
-    border-color: #ccc;
-    color: black;
-  }
-  table tbody .date {
-    background-color: #0099fa;
-    font-weight: bold;
-  }
   footer {
     color: #ccc;
-    background-color: #031626;
   }
 }
 

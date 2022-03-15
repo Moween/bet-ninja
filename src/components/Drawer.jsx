@@ -4,15 +4,16 @@ import Button from '@material-ui/core/Button';
 import Divider from '@material-ui/core/Divider';
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
 import MenuIcon from '@material-ui/icons/Menu';
-import { useSelector } from 'react-redux';
+import { useMediaQuery } from '@material-ui/core';
 
 import Navbar from './Navbar';
 import DatePicker from './DatePicker';
+import { theme } from '../utils/muiStyles';
 
 const TemporaryDrawer = ({ pathName }) => {
-  const [state, setState] = useState(false);
-  const mobile = useSelector((state) => state.mediaQuery.mobile);
-  const tablet = useSelector((state) => state.mediaQuery.tablet);
+  const [open, setOpen] = useState(false);
+  const mobile = useMediaQuery(theme.breakpoints.down(768));
+  const tablet = useMediaQuery(theme.breakpoints.between(768, 1024));
 
   const toggleDrawer = (event) => {
     if (
@@ -22,7 +23,7 @@ const TemporaryDrawer = ({ pathName }) => {
       return;
     }
 
-    setState((prevState) => !prevState);
+    setOpen((prevState) => !prevState);
   };
 
   return (
@@ -31,7 +32,7 @@ const TemporaryDrawer = ({ pathName }) => {
       <SwipeableDrawer
         variant="temporary"
         anchor="right"
-        open={state}
+        open={open}
         onClose={toggleDrawer}
         onOpen={toggleDrawer}
         sx={{
@@ -51,7 +52,10 @@ const TemporaryDrawer = ({ pathName }) => {
           {pathName === '/pages/history' ? (
             <>
               <Divider />
-              <DatePicker smallAndTabScreen={mobile || tablet} closeDrawer={() => setState(false)} />
+              <DatePicker
+                smallAndTabScreen={mobile || tablet}
+                closeDrawer={() => setOpen(false)}
+              />
             </>
           ) : null}
         </Box>

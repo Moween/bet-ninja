@@ -7,7 +7,7 @@ async function fetchPastMatches({ startDate, endDate }) {
 }
 // Async Logic using middleware
 const fetchHistory = createAsyncThunk(
-  'soccerData/fetchHistory',
+  'SoccerData/FetchHistory',
   (dates) => fetchPastMatches(dates)
 );
 

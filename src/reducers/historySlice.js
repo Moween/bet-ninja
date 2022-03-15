@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import fetchHistory from '../actions/history';
 
 const historySlice = createSlice({
-  name: 'pastMatchesData',
+  name: 'PastMatchesData',
   initialState: {
     startDate: null,
     endDate: null,
@@ -10,10 +10,10 @@ const historySlice = createSlice({
     soccerData: [],
   },
   reducers: {
-    startDatePicked: (state, action) => {
+    StartDatePicked: (state, action) => {
       state.startDate = action.payload;
     },
-    endDatePicked: (state, action) => {
+    EndDatePicked: (state, action) => {
       state.endDate = action.payload;
     },
   },
@@ -33,5 +33,5 @@ const historySlice = createSlice({
   },
 });
 
-export const { startDatePicked, endDatePicked } = historySlice.actions;
+export const { StartDatePicked, EndDatePicked } = historySlice.actions;
 export default historySlice.reducer;
