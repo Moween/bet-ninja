@@ -23,11 +23,12 @@ body {
       text-align: center;
       a {
         color: $silver;
+        font-weight: 500;
         text-decoration: none;
         width: 20%;
         font-family: 1.5rem;
         padding: 0.5rem;
-        margin: 1rem;
+        margin: 1rem;     
         &:hover {
           color: $silver;
         }

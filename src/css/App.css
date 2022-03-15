@@ -105,6 +105,7 @@ body {
 
 .header .nav_list a {
   color: #ccc;
+  font-weight: 500;
   text-decoration: none;
   width: 20%;
   font-family: 1.5rem;
