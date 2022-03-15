@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from '@mui/material/Link';
+import { NavLink } from 'react-router-dom';
 import { useMediaQuery } from '@material-ui/core';
 
 import { theme } from '../utils/muiStyles';
@@ -22,9 +22,13 @@ const Navbar = () => {
     <nav className={mobile || tablet ? 'side-nav' : 'nav'}>
       <ul className={mobile || tablet ? 'side-nav-list' : 'nav_list'}>
         {navLinks.map((navLink) => (
-          <Link href={navLink.path} key={navLink.name}>
+          <NavLink
+            to={navLink.path}
+            key={navLink.name}
+            style={({ isActive }) =>  ({ color: isActive ? 'red' : ''})}
+          >
             {navLink.name}
-          </Link>
+          </NavLink>
         ))}
       </ul>
     </nav>
